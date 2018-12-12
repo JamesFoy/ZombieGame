@@ -1,0 +1,627 @@
+fileFormatVersion: 2
+guid: 71a7f8669de848e45ba57bda95f3a58e
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: DGT Automatic rifle 6
+    21300002: DGT Automatic rifle 1
+    21300004: DGT Handgun 5
+    21300006: DGT Automatic rifle 5
+    21300008: DGT Semiautomatic rifle 1
+    21300010: DGT Handgun 4
+    21300012: DGT Shotgun 2
+    21300014: DGT Handgun 3
+    21300016: DGT Submachinegun 3
+    21300018: DGT Automatic rifle 2
+    21300020: DGT Sniper 3
+    21300022: DGT Handgun 2
+    21300024: DGT Submachinegun 1
+    21300026: DGT Shotgun 1
+    21300028: DGT Handgun 1
+    21300030: DGT Rifle 1
+    21300032: DGT Rocketlauncher 1
+    21300034: DGT Sniper 2
+    21300036: DGT Sniper 1
+    21300038: DGT Combat knife
+    21300040: DGT Automatic shotgun 1
+    21300042: DGT Submachinegun 2
+    21300044: DGT Automatic rifle 3
+    21300046: DGT Automatic rifle 4
+    21300048: Dark grey spritesheet 2_0
+    21300050: Dark grey spritesheet 2_1
+    21300052: Dark grey spritesheet 2_2
+    21300054: Dark grey spritesheet 2_3
+    21300056: Dark grey spritesheet 2_4
+    21300058: Dark grey spritesheet 2_5
+    21300060: Dark grey spritesheet 2_6
+    21300062: Dark grey spritesheet 2_7
+    21300064: Dark grey spritesheet 2_8
+    21300066: Dark grey spritesheet 2_9
+    21300068: Dark grey spritesheet 2_10
+    21300070: Dark grey spritesheet 2_11
+    21300072: Dark grey spritesheet 2_12
+    21300074: Dark grey spritesheet 2_13
+    21300076: Dark grey spritesheet 2_14
+    21300078: Dark grey spritesheet 2_15
+    21300080: Dark grey spritesheet 2_16
+    21300082: Dark grey spritesheet 2_17
+    21300084: Dark grey spritesheet 2_18
+    21300086: Dark grey spritesheet 2_19
+    21300088: Dark grey spritesheet 2_20
+    21300090: Dark grey spritesheet 2_21
+    21300092: Dark grey spritesheet 2_22
+    21300094: Dark grey spritesheet 2_23
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Web
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 3563
+        width: 1524
+        height: 519
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60df1cd3bfa2c3d4081a369714cadbfc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_1
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 3586
+        width: 1548
+        height: 448
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce2b7875244b64a46bc7466592dba5e1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_2
+      rect:
+        serializedVersion: 2
+        x: 3486
+        y: 3630
+        width: 539
+        height: 404
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 339b2e6da6b6b0149880921f75195297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_3
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 2946
+        width: 1388
+        height: 544
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bd0fe4798ce66d4494d663abf57fc02
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_4
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 3166
+        width: 1696
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc1ff5422f2c26f4fb1cd35617f8a669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_5
+      rect:
+        serializedVersion: 2
+        x: 3514
+        y: 3190
+        width: 540
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5697ac7612ab5644dbf5a5ae87e8cb21
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_6
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 2878
+        width: 1686
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be7d761f76286194db973dadd59bcadc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_7
+      rect:
+        serializedVersion: 2
+        x: 3394
+        y: 2800
+        width: 676
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96c87fa0acb1a834c956529aa8942d53
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_8
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 2464
+        width: 748
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a082930dae2511046999f26e029d789a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_9
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 2486
+        width: 864
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9bc83ce4c355394abb1dcc8775cba28
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_10
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 2480
+        width: 1704
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db633342d0c43554ea8557bc4ec349b6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_11
+      rect:
+        serializedVersion: 2
+        x: 3391
+        y: 2326
+        width: 673
+        height: 424
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06173368f47e78a4689724a56d22c5a0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_12
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 1962
+        width: 1168
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71e95fb1ad554ab4f94ec0ff059fb51e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_13
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 2106
+        width: 1639
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 691a6b0f6019794428029aa80336547d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_14
+      rect:
+        serializedVersion: 2
+        x: 3450
+        y: 1808
+        width: 632
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 690e6343990a0294685431f3e252d86c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_15
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1478
+        width: 1288
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0e0690216b80a84ca664411ca5df79d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_16
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 1790
+        width: 1734
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 755744bdab0091c4aba10071d13b4c2d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_17
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 986
+        width: 1604
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b19e6755363cd8e44b8d71c028badd32
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_18
+      rect:
+        serializedVersion: 2
+        x: 1634
+        y: 1386
+        width: 1870
+        height: 363
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f5d2e937134af8408f41a86e4e7191c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_19
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 502
+        width: 1600
+        height: 492
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2b552876c50bfb41b2549647288b631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_20
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 896
+        width: 1712
+        height: 382
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71be77e50f581f940a4db846ad5a6cb5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_21
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 15
+        width: 1052
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2b0a996ba0bb924d8b4680d9145feea
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_22
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 432
+        width: 1731
+        height: 382
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4efdc450b9248d34188c74fc73f0dcf5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark grey spritesheet 2_23
+      rect:
+        serializedVersion: 2
+        x: 1966
+        y: 106
+        width: 852
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 377827a512146044f987b7686413d0aa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 4cf0b4d6e81e7db40a7fce32e2054884
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
