@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{AE2B3A52-3652-6140-F39D-3B1406F1DA32}</ProjectGuid>
+    <ProjectGuid>{06570B97-0772-0FF0-BE7C-6BD02C18A982}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -69,40 +69,40 @@
      <None Include="Assets\XInputDotNet\Docs.txt" />
      <None Include="Assets\XInputDotNet\MITLicense.txt" />
  <Reference Include="Unity.RenderPipelines.Core.Editor">
- <HintPath>C:/Users/JFoy/OneDrive - Solihull College/Unity/Action Test/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+ <HintPath>C:/Users/JFoy/Documents/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipelines.Core.Runtime">
- <HintPath>C:/Users/JFoy/OneDrive - Solihull College/Unity/Action Test/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+ <HintPath>C:/Users/JFoy/Documents/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.StandardEvents">
- <HintPath>C:/Users/JFoy/OneDrive - Solihull College/Unity/Action Test/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ <HintPath>C:/Users/JFoy/Documents/GitHub/ZombieGame/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/JFoy/OneDrive - Solihull College/Unity/Action Test/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/JFoy/Documents/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>C:/Users/JFoy/OneDrive - Solihull College/Unity/Action Test/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>C:/Users/JFoy/Documents/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
- <HintPath>C:/Users/JFoy/OneDrive - Solihull College/Unity/Action Test/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
+ <HintPath>C:/Users/JFoy/Documents/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Postprocessing.Editor">
- <HintPath>C:/Users/JFoy/OneDrive - Solihull College/Unity/Action Test/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+ <HintPath>C:/Users/JFoy/Documents/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Postprocessing.Runtime">
- <HintPath>C:/Users/JFoy/OneDrive - Solihull College/Unity/Action Test/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+ <HintPath>C:/Users/JFoy/Documents/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ShaderGraph.Editor">
- <HintPath>C:/Users/JFoy/OneDrive - Solihull College/Unity/Action Test/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+ <HintPath>C:/Users/JFoy/Documents/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipelines.HighDefinition.Editor">
- <HintPath>C:/Users/JFoy/OneDrive - Solihull College/Unity/Action Test/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Editor.dll</HintPath>
+ <HintPath>C:/Users/JFoy/Documents/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/JFoy/OneDrive - Solihull College/Unity/Action Test/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/JFoy/Documents/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipelines.Core.IncludePaths">
- <HintPath>C:/Users/JFoy/OneDrive - Solihull College/Unity/Action Test/Library/ScriptAssemblies/Unity.RenderPipelines.Core.IncludePaths.dll</HintPath>
+ <HintPath>C:/Users/JFoy/Documents/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.IncludePaths.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -303,7 +303,7 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.10f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="XInputDotNetPure">
- <HintPath>C:/Users/JFoy/OneDrive - Solihull College/Unity/Action Test/Assets/XInputDotNet/Plugins/XInputDotNetPure.dll</HintPath>
+ <HintPath>C:/Users/JFoy/Documents/GitHub/ZombieGame/Assets/XInputDotNet/Plugins/XInputDotNetPure.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>C:/Users/JFoy/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
