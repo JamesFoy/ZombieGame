@@ -101,7 +101,12 @@ ModelImporter:
     4300032: AKM_Lod_3
     4300034: magazine_Lod_3
     4300036: AKM_Lod_4
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AKM
+    second: {fileID: 2100000, guid: 4358670b991db444ea50bbc3ada4c9af, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
