@@ -16,7 +16,7 @@ public class CharacterAudioManager : MonoBehaviour {
     public AudioClip[] footStepClips;
     public AudioSource effectsSource;
     public AudioClipsList[] effectsList;
-    PlayerMovement player;
+    PlayerMovement playerMove;
 
     float startingVolumeRun;
     float characterMovement;
@@ -24,7 +24,7 @@ public class CharacterAudioManager : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        player = GetComponent<PlayerMovement>();
+        playerMove = GetComponent<PlayerMovement>();
         //startingVolumeRun = runFoley.volume;
 
         //runFoley.volume = 0;
@@ -34,7 +34,7 @@ public class CharacterAudioManager : MonoBehaviour {
 	void Update ()
     {
         float targetThreshold = 0.6f;
-        if (player.moving == true)
+        if (playerMove.moving == true)
         {
             footStepTimer += Time.deltaTime;
 

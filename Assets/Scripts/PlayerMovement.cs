@@ -1,27 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
-using XInputDotNetPure;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     PlayerStats player;
 
-    [SerializeField]
-    Weapons weapon;
+    PlayerAnimations playerAnim;
+
+    PlayerControl playerControl;
 
     CharacterAudioManager Audio;
 
-    PlayerIndex one; // sets how many players are in the game using controllers. This sets 1 player as player one.  
-
     [SerializeField]
     private CameraFollow cam;
-
-    [SerializeField]
-    private Transform shootT;
-
-    [SerializeField]
-    private bool isShooting;
 
     [SerializeField]
     private float speed;
@@ -36,23 +28,15 @@ public class PlayerMovement : MonoBehaviour
     private float speedDampTime = 0.1f; // The damping for the speed parameter
 
     [SerializeField]
-    private float h; // Moving around (H & V are input)
+    public float h; // Moving around (H & V are input)
     [SerializeField]
-    private float v;
-
-    public bool moving;
-
-    private bool aiming;
-
-    private bool Pistol;
-    private bool TwoHanded;
-
-    private Animator anim;
-
-    private bool emptyGun;
-    private bool Reload;
+    public float v;
 
     private Rigidbody rb;
+
+    public bool aiming;
+
+    public bool moving;
 
     [SerializeField]
     private GameObject mag;
@@ -62,60 +46,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Transform magSpawn;
 
-    GamePadState state;
-
-    [SerializeField]
-    private float fireRate;
-    private float nextFire = 0.0f;
-
-    [SerializeField]
-    private float shotsDone = 0;
-
-    private LineRenderer laserLine;
-
-    private WaitForSeconds shotDuration = new WaitForSeconds(.07f);
-
     private void Start()
     {
-        anim = GetComponent<Animator>();
+        playerAnim = GetComponent<PlayerAnimations>();
         rb = GetComponent<Rigidbody>();
         Audio = GetComponent<CharacterAudioManager>();
-        aiming = false;
-        isShooting = false;
+        playerControl = GetComponent<PlayerControl>();
+
         moving = false;
-        emptyGun = false;
-        Reload = false;
-        Pistol = false;
-        TwoHanded = false;
-        laserLine = GetComponentInChildren<LineRenderer>();
     }
 
     private void FixedUpdate()
     {
-        PlayerIndex player = PlayerIndex.One;
-
-        state = GamePad.GetState(player);
-
-        if (isShooting == true)
-        {
-            GamePad.SetVibration(player, 1, state.Triggers.Right);
-            Audio.PlayGunSound();
-        }
-        else
-        {
-            GamePad.SetVibration(player, 0, 0);
-        }
-
-        h = state.ThumbSticks.Left.X;
-        v = state.ThumbSticks.Left.Y;
-
-        anim.SetFloat("Horizontal", h);
-        anim.SetFloat("Vertical", v);
-        anim.SetBool("isShooting", isShooting);
-        anim.SetBool("isAiming", aiming);
-        anim.SetBool("Reload", Reload);
-        anim.SetBool("Pistol", Pistol);
-        anim.SetBool("TwoHanded", TwoHanded);
+        h = playerControl.state.ThumbSticks.Left.X;
+        v = playerControl.state.ThumbSticks.Left.Y;
 
         if (Mathf.Abs(h) > 0.1f || Mathf.Abs(v) > 0.1f)
         {
@@ -130,61 +74,6 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             moving = false;
-        }
-    }
-
-    private void Update()
-    {
-        if (state.Triggers.Right == 1 && Time.time > nextFire && shotsDone < weapon.MaxShots)
-        {
-            StartCoroutine(ShootLaser());
-
-            nextFire = Time.time + fireRate;
-            isShooting = true;
-            shotsDone++;
-            RaycastHit Hit;
-
-            laserLine.SetPosition(0, shootT.position);
-
-            Vector3 fwd = shootT.transform.TransformDirection(Vector3.forward);
-            Debug.DrawRay(shootT.transform.position, fwd * 30, Color.green);
-            if (Physics.Raycast(shootT.transform.position, fwd, out Hit, 50))
-            {
-                laserLine.SetPosition(1, Hit.point);
-
-                if (Hit.collider.tag == "Enemy")
-                {
-                    print("enemy");
-                    Hit.collider.GetComponent<Enemy>().enemy.Health -= weapon.AkDamge;
-                }
-            }
-            else
-            {
-                laserLine.SetPosition(1, shootT.transform.position + (fwd * 30));
-            }
-        }
-        else
-        {
-            isShooting = false;
-        }
-
-        
-
-        if (state.Triggers.Right == 1 && Time.time > nextFire && shotsDone >= weapon.MaxShots)
-        {
-            nextFire = Time.time + fireRate;
-            Audio.PlayEffect("enmpty_gun");
-            emptyGun = true;
-        }
-
-        if (state.Buttons.X == ButtonState.Pressed)
-        {
-            ReloadingGun();
-            Reload = true;
-        }
-        else
-        {
-            Reload = false;
         }
     }
 
@@ -234,17 +123,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void ReloadingGun()
-    {
-        if (Reload == true)
-        {
-            Audio.PlayReloadSound();
-            anim.SetTrigger("Reloading");
-            emptyGun = false;
-            shotsDone = 0;
-        }
-    }
-
     public void MagOff()
     {
         Instantiate(mag2, magSpawn);
@@ -254,12 +132,5 @@ public class PlayerMovement : MonoBehaviour
     public void MagOn()
     {
         mag.SetActive(true);
-    }
-
-    private IEnumerator ShootLaser()
-    {
-        laserLine.enabled = true;
-        yield return shotDuration;
-        laserLine.enabled = false;
     }
 }

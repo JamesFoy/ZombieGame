@@ -100,6 +100,9 @@ GameObject:
   - component: {fileID: 136937145704035358}
   - component: {fileID: 54857664173352524}
   - component: {fileID: 114175825334636496}
+  - component: {fileID: 114224738861435456}
+  - component: {fileID: 114593373190664284}
+  - component: {fileID: 114692623597363548}
   - component: {fileID: 114736970033384604}
   m_Layer: 9
   m_Name: Player
@@ -594,7 +597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1259398324729030
 GameObject:
   m_ObjectHideFlags: 1
@@ -1553,7 +1556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1822033793480430
 GameObject:
   m_ObjectHideFlags: 1
@@ -2290,13 +2293,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1010171111139492}
-  m_LocalRotation: {x: 0.033705637, y: 0.000000014901161, z: 0.00000008940697, w: 0.99943185}
-  m_LocalPosition: {x: -0.0007000491, y: 0.02839993, z: 0.4744002}
+  m_LocalRotation: {x: 0.049154893, y: -0.00000008288769, z: 0.00000016251575, w: 0.9987912}
+  m_LocalPosition: {x: -0.001, y: 0.019, z: 0.446}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4569815647014706}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 3.8630002, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5.635, y: 0, z: 0}
 --- !u!4 &4176861613909880
 Transform:
   m_ObjectHideFlags: 1
@@ -2930,7 +2933,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1043752967601360}
-  m_LocalRotation: {x: -0.029142633, y: 0.06902251, z: -0.020299882, w: 0.9969827}
+  m_LocalRotation: {x: -0.030746058, y: -0.01503396, z: -0.017778128, w: 0.9992561}
   m_LocalPosition: {x: 0.005000304, y: -0.011906831, z: 0.001491623}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2938,7 +2941,7 @@ Transform:
   - {fileID: 4677526397393538}
   m_Father: {fileID: 4703420119400782}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -3.5540001, y: -1.6620001, z: -1.9870001}
 --- !u!4 &4569887292806366
 Transform:
   m_ObjectHideFlags: 1
@@ -3188,13 +3191,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1949007625815016}
-  m_LocalRotation: {x: -0.000000059604638, y: -0, z: 0.000000059604638, w: 1}
+  m_LocalRotation: {x: 0.0064318096, y: -0.000000017695127, z: -0.00000002639717,
+    w: 0.9999793}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4569815647014706}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.73700005, y: 0, z: 0}
 --- !u!4 &4699131782120144
 Transform:
   m_ObjectHideFlags: 1
@@ -5469,22 +5473,59 @@ MonoBehaviour:
   player:
     playerHealth: 3
     money: 0
-  weapon:
-    akDamage: 1
-    maxShots: 30
   cam: {fileID: 0}
-  shootT: {fileID: 4174431051068242}
-  isShooting: 0
   speed: 11
   aimSpeed: 11
   offset: 1
   h: 0
   v: 0
+  aiming: 0
   moving: 0
   mag: {fileID: 1761875473209798}
   mag2: {fileID: 1542448303816092, guid: c56dcde1af8514a46bfccb3f91b9155f, type: 2}
   magSpawn: {fileID: 4529412983433634}
-  fireRate: 0.14
+--- !u!114 &114224738861435456
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1043964555887558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5aab802e19be94597f9b988876f014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114593373190664284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1043964555887558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d84470f821ec49458c45e3312bbbb1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 95436877356246688}
+--- !u!114 &114692623597363548
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1043964555887558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1656df5e88d4004986b76158fa57f68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+    akDamage: 0
+    maxShots: 30
+  shootT: {fileID: 0}
+  isShooting: 0
+  emptyGun: 0
+  reload: 0
+  fireRate: 0
   shotsDone: 0
 --- !u!114 &114736970033384604
 MonoBehaviour:
