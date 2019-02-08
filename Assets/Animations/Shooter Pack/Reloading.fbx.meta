@@ -200,14 +200,16 @@ ModelImporter:
       - time: 0.11627907
         functionName: MagOff
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: 7d84470f821ec49458c45e3312bbbb1b,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.5529716
         functionName: MagOn
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: 7d84470f821ec49458c45e3312bbbb1b,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
