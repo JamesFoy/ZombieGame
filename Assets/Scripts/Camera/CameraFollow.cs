@@ -6,7 +6,19 @@ using XInputDotNetPure;
 public class CameraFollow : MonoBehaviour {
 
     [SerializeField]
-    private float CameraMoveSpeed = 120.0f;
+    AimingIKControl iKControl;
+
+    [SerializeField]
+    PlayerControl playerControl;
+
+    [SerializeField]
+    GameObject aimCamera;
+
+    [SerializeField]
+    GameObject mainCamera;
+
+    [SerializeField]
+    private float CameraMoveSpeed;
     public GameObject CameraFollowObj;
     float t = 0;
     Vector3 FollowPOS;
@@ -33,7 +45,7 @@ public class CameraFollow : MonoBehaviour {
     [SerializeField]
     private float finalInputX;
     [SerializeField]
-    private float finalInputZ;
+    private float finalInputY;
     [SerializeField]
     private float smoothX;
     [SerializeField]
@@ -62,9 +74,8 @@ public class CameraFollow : MonoBehaviour {
 
     private void Awake()
     {
-        Transform target = CameraStart.transform;
-        transform.position = target.position;
-        Camera.main.fieldOfView = 50;
+        mainCamera.SetActive(true);
+        aimCamera.SetActive(false);
     }
 
     // Use this for initialization
@@ -81,30 +92,29 @@ public class CameraFollow : MonoBehaviour {
 	void Update () {
         //the rotation of the sticks/mouse
         float inputX = Input.GetAxis("RightStickHorizontal");
-        float inputZ = Input.GetAxis("RightStickVertical");
+        float inputY = Input.GetAxis("RightStickVertical");
         mouseX = Input.GetAxis("Mouse X");
         mouseY = Input.GetAxis("Mouse Y");
         finalInputX = inputX + mouseX;
-        finalInputZ = inputZ + mouseY;
+        finalInputY = inputY + mouseY;
 
         rotY += finalInputX * inputSensitivity * Time.deltaTime;
-        rotX += finalInputZ * inputSensitivity * Time.deltaTime;
+        rotX += finalInputY * inputSensitivity * Time.deltaTime;
 
         rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
 
         Quaternion localRotation = Quaternion.Euler(rotX, rotY, 0.0f);
         transform.rotation = localRotation;
 
-        PlayerIndex player = PlayerIndex.One;
-        state = GamePad.GetState(player);
-
         //Keyboard & Mouse
-        if (Input.GetMouseButton(1) || state.Triggers.Left == 1)
+        if (playerControl.state.Triggers.Left == 1)
         {
+
             Aiming();
         }
         else
         {
+
             NotAiming();
         }
 
@@ -121,18 +131,11 @@ public class CameraFollow : MonoBehaviour {
 
     void LateUpdate()
     {
-        if (Mathf.Abs(Input.GetAxis("Horizontal")) >= 0.1f||Mathf.Abs(Input.GetAxis("Vertical")) >= 0.1f || Mathf.Abs(state.ThumbSticks.Left.Y) >= 0.1f || Mathf.Abs(state.ThumbSticks.Left.X) >= 0.1f)
-        {
-            CameraUpdater();
-        }
+        CameraUpdater();
     }
 
     public void CameraUpdater()
     {   
-        t += 1 * Time.deltaTime;
-        t=Mathf.Clamp(t, 0, 2);
-        Camera.main.fieldOfView = Mathf.Lerp(50, 80,t );
-
         //set the target object to follow
         Transform target = CameraFollowObj.transform;
 
@@ -143,11 +146,17 @@ public class CameraFollow : MonoBehaviour {
 
     void Aiming()
     {
+        aimCamera.SetActive(true);
+        mainCamera.SetActive(false);
+        iKControl.ikActive = true;
         isAiming = true;
     }
 
     void NotAiming()
     {
+        aimCamera.SetActive(false);
+        mainCamera.SetActive(true);
+        iKControl.ikActive = false;
         isAiming = false;
     }
 }

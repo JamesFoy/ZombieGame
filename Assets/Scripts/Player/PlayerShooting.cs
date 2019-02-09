@@ -91,7 +91,7 @@ public class PlayerShooting : MonoBehaviour {
             emptyGun = true;
         }
 
-        if (playerControl.state.Buttons.X == ButtonState.Pressed)
+        if (playerControl.state.Buttons.X == ButtonState.Pressed && shotsDone != 0)
         {
             playerAnim.ReloadingGun();
             reload = true;
