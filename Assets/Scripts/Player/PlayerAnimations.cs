@@ -16,6 +16,14 @@ public class PlayerAnimations : MonoBehaviour {
     private bool Pistol = false;
     private bool TwoHanded = false;
 
+    [SerializeField]
+    private GameObject mag;
+    [SerializeField]
+    private GameObject mag2;
+
+    [SerializeField]
+    private Transform magSpawn;
+
     // Use this for initialization
     public void Start ()
     {
@@ -50,5 +58,16 @@ public class PlayerAnimations : MonoBehaviour {
             playerShot.emptyGun = false;
             playerShot.shotsDone = 0;
         }
+    }
+
+    public void MagOff()
+    {
+        Instantiate(mag2, magSpawn);
+        mag.SetActive(false);
+    }
+
+    public void MagOn()
+    {
+        mag.SetActive(true);
     }
 }

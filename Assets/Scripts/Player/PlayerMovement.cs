@@ -38,14 +38,6 @@ public class PlayerMovement : MonoBehaviour
 
     public bool moving;
 
-    [SerializeField]
-    private GameObject mag;
-    [SerializeField]
-    private GameObject mag2;
-
-    [SerializeField]
-    private Transform magSpawn;
-
     private void Start()
     {
         playerAnim = GetComponent<PlayerAnimations>();
@@ -74,6 +66,9 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             moving = false;
+            Vector3 stop = new Vector3(0, 0, 0);
+            rb.angularVelocity = stop;
+            rb.velocity = stop;
         }
     }
 
@@ -121,16 +116,5 @@ public class PlayerMovement : MonoBehaviour
             
             rb.AddForce(transform.forward  * v * aimSpeed);
         }
-    }
-
-    public void MagOff()
-    {
-        Instantiate(mag2, magSpawn);
-        mag.SetActive(false);
-    }
-
-    public void MagOn()
-    {
-        mag.SetActive(true);
     }
 }
