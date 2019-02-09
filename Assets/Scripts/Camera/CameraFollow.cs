@@ -148,7 +148,7 @@ public class CameraFollow : MonoBehaviour {
     {
         aimCamera.SetActive(true);
         mainCamera.SetActive(false);
-        iKControl.ikActive = true;
+        iKControl.activeIK = true;
         isAiming = true;
     }
 
@@ -156,7 +156,7 @@ public class CameraFollow : MonoBehaviour {
     {
         aimCamera.SetActive(false);
         mainCamera.SetActive(true);
-        iKControl.ikActive = false;
+        iKControl.activeIK = false;
         isAiming = false;
     }
 }

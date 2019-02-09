@@ -5,54 +5,39 @@ using System.Collections;
 [RequireComponent(typeof(Animator))]
 
 public class AimingIKControl : MonoBehaviour
-{
+{ 
+    private Animator anim;
+    public Transform bspine;
+    public bool activeIK;
+    public Transform target;
 
-    protected Animator animator;
-
-    public bool ikActive = false;
-    public Transform rightHandObj = null;
-    public Transform lookObj = null;
-
+    // Use this for initialization
     void Start()
     {
-        animator = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
-    //a callback for calculating IK
-    void OnAnimatorIK()
+    // Update is called once per frame
+    void Update()
     {
-        if (animator)
+
+    }
+
+    private void OnAnimatorIK(int layerIndex)
+    {
+        bspine = anim.GetBoneTransform(HumanBodyBones.Spine);
+        Vector3 dir = target.position - transform.position;
+
+        if (activeIK)
+        { 
+            anim.SetLookAtWeight(1, 0.18f, 1, 1, 1);
+            anim.SetLookAtPosition(target.position);
+            bspine.transform.rotation = Quaternion.LookRotation(dir, transform.up);
+            anim.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.LookRotation(target.transform.forward));
+        }
+        else
         {
-
-            //if the IK is active, set the position and rotation directly to the goal. 
-            if (ikActive)
-            {
-
-                // Set the look target position, if one has been assigned
-                if (lookObj != null)
-                {
-                    animator.SetLookAtWeight(1);
-                    animator.SetLookAtPosition(lookObj.position);
-                }
-
-                // Set the right hand target position and rotation, if one has been assigned
-                if (rightHandObj != null)
-                {
-                    animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1);
-                    animator.SetIKRotationWeight(AvatarIKGoal.RightHand, 1);
-                    animator.SetIKPosition(AvatarIKGoal.RightHand, rightHandObj.position);
-                    animator.SetIKRotation(AvatarIKGoal.RightHand, rightHandObj.rotation);
-                }
-
-            }
-
-            //if the IK is not active, set the position and rotation of the hand and head back to the original position
-            else
-            {
-                animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 0);
-                animator.SetIKRotationWeight(AvatarIKGoal.RightHand, 0);
-                animator.SetLookAtWeight(0);
-            }
+            anim.SetLookAtWeight(0, 0, 0, 0, 0);
         }
     }
-}
+} 
