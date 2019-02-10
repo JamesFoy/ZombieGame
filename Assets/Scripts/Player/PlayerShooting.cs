@@ -117,6 +117,6 @@ public class PlayerShooting : MonoBehaviour {
 
     public void Shot()
     {
-        fire.Play();
+        //fire.Play();
     }
 }
