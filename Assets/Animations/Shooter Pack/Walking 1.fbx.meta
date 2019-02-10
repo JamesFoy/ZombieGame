@@ -225,7 +225,23 @@ ModelImporter:
           preInfinity: 3
           postInfinity: 3
           rotationOrder: 4
-      events: []
+      events:
+      - time: 0.33846155
+        functionName: Step
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 34bbf5c69b89610498297c50afdadbc2,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.8153846
+        functionName: Step
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 34bbf5c69b89610498297c50afdadbc2,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1

@@ -57,7 +57,7 @@ public class CameraFollow : MonoBehaviour {
     [SerializeField]
     private float fovSpeed = 100f;
     [SerializeField]
-    private bool isAiming;
+    public bool isAiming;
 
     [SerializeField]
     LayerMask layerMask;
@@ -93,13 +93,13 @@ public class CameraFollow : MonoBehaviour {
         //the rotation of the sticks/mouse
         float inputX = Input.GetAxis("RightStickHorizontal");
         float inputY = Input.GetAxis("RightStickVertical");
-        mouseX = Input.GetAxis("Mouse X");
-        mouseY = Input.GetAxis("Mouse Y");
-        finalInputX = inputX + mouseX;
-        finalInputY = inputY + mouseY;
+        //mouseX = Input.GetAxis("Mouse X");
+        //mouseY = Input.GetAxis("Mouse Y");
+        //finalInputX = inputX + mouseX;
+        //finalInputY = inputY + mouseY;
 
-        rotY += finalInputX * inputSensitivity * Time.deltaTime;
-        rotX += finalInputY * inputSensitivity * Time.deltaTime;
+        rotY += inputX * inputSensitivity * Time.deltaTime;
+        rotX += inputY * inputSensitivity * Time.deltaTime;
 
         rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
 

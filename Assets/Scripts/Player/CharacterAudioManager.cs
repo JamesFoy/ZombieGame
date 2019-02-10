@@ -6,17 +6,18 @@ public class CharacterAudioManager : MonoBehaviour {
 
     public AudioSource gunSounds;
     public AudioSource AkReload;
-    //public AudioSource runFoley;
+    public AudioSource runFoley;
 
     public float footStepTimer;
     public float walkThreshold;
-    //public float runThreshold;
+    public float runThreshold;
     public AudioSource footStep1;
     public AudioSource footStep2;
     public AudioClip[] footStepClips;
     public AudioSource effectsSource;
     public AudioClipsList[] effectsList;
     PlayerMovement playerMove;
+    PlayerAnimations playerAnim;
 
     float startingVolumeRun;
     float characterMovement;
@@ -24,33 +25,13 @@ public class CharacterAudioManager : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        playerAnim = GetComponent<PlayerAnimations>();
         playerMove = GetComponent<PlayerMovement>();
-        //startingVolumeRun = runFoley.volume;
+        startingVolumeRun = runFoley.volume;
 
-        //runFoley.volume = 0;
+        runFoley.volume = 0;
 	}
 	
-	// Update is called once per frame
-	void Update ()
-    {
-        float targetThreshold = 0.6f;
-        if (playerMove.moving == true)
-        {
-            footStepTimer += Time.deltaTime;
-
-            if (footStepTimer > targetThreshold)
-            {
-                PlayFootStep(); // calls the play footstep function
-                footStepTimer = 0;
-            }
-        }
-        else
-        {
-            footStep1.Stop();
-            footStep2.Stop();
-        }
-	}
-
     public void PlayGunSound()
     {
         gunSounds.Play();
@@ -59,6 +40,24 @@ public class CharacterAudioManager : MonoBehaviour {
     public void PlayReloadSound()
     {
         AkReload.Play();
+    }
+
+    public void Step()
+    {
+        PlayFootStep();
+    }
+
+    public void RunStep()
+    {
+        if (playerAnim.isRunning == true)
+        {
+            runFoley.volume = 0.6f;
+        }
+        else
+        {
+            runFoley.volume = 0;
+        }
+        PlayFootStep();
     }
 
     public void PlayFootStep()

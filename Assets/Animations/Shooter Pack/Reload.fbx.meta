@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 137c9d2840496934faaa907a4e0acc17
+guid: c9bb107ebbe5bd349987076b7b4a93c8
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -167,7 +167,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 1
+    importConstraints: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -179,8 +179,8 @@ ModelImporter:
     - serializedVersion: 16
       name: mixamo.com
       takeName: mixamo.com
-      firstFrame: 0
-      lastFrame: 198
+      firstFrame: 38
+      lastFrame: 183
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -197,7 +197,7 @@ ModelImporter:
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
-      bodyMask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000100000001000000
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
       - time: 0
@@ -208,7 +208,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.11627907
+      - time: 0.23653847
         functionName: MagOff
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7d84470f821ec49458c45e3312bbbb1b,
@@ -216,7 +216,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.5529716
+      - time: 0.5153846
         functionName: MagOn
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7d84470f821ec49458c45e3312bbbb1b,
@@ -224,7 +224,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.88729507
+      - time: 1
         functionName: IkOn
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7d84470f821ec49458c45e3312bbbb1b,

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using XInputDotNetPure;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -34,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
 
-    public bool aiming;
+    public bool aiming = false;
 
     public bool moving;
 
@@ -69,6 +70,17 @@ public class PlayerMovement : MonoBehaviour
             Vector3 stop = new Vector3(0, 0, 0);
             rb.angularVelocity = stop;
             rb.velocity = stop;
+        }
+
+        if (playerControl.state.Buttons.LeftStick == ButtonState.Pressed && cam.isAiming == false)
+        {
+            speed = 20;
+            playerAnim.isRunning = true;
+        }
+        else
+        {
+            speed = 11;
+            playerAnim.isRunning = false;
         }
     }
 
@@ -108,13 +120,13 @@ public class PlayerMovement : MonoBehaviour
         if (h != 0)
         { 
             
-            rb.AddForce(transform.right * h * aimSpeed);
+            rb.AddForce(Camera.main.transform.right * h * speed);
         }
 
         if (v != 0)
         {
             
-            rb.AddForce(transform.forward  * v * aimSpeed);
+            rb.AddForce(Camera.main.transform.forward  * v * speed);
         }
     }
 }

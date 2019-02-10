@@ -10,6 +10,11 @@ public class PlayerAnimations : MonoBehaviour {
 
     PlayerMovement playerMove;
 
+    HandPlacementIK handIk;
+
+    [SerializeField]
+    private CameraFollow cam;
+
     [SerializeField]
     private Animator anim;
 
@@ -23,6 +28,7 @@ public class PlayerAnimations : MonoBehaviour {
 
     [SerializeField]
     private Transform magSpawn;
+    public bool isRunning;
 
     // Use this for initialization
     public void Start ()
@@ -30,6 +36,7 @@ public class PlayerAnimations : MonoBehaviour {
         playerMove = GetComponent<PlayerMovement>();
         playerShot = GetComponent<PlayerShooting>();
         Audio = GetComponent<CharacterAudioManager>();
+        handIk = GetComponent<HandPlacementIK>();
 
         if (anim != null)
         {
@@ -43,10 +50,12 @@ public class PlayerAnimations : MonoBehaviour {
         anim.SetFloat("Horizontal", playerMove.h);
         anim.SetFloat("Vertical", playerMove.v);
         anim.SetBool("isShooting", playerShot.isShooting);
-        anim.SetBool("isAiming", playerMove.aiming);
+        anim.SetBool("isAiming", cam.isAiming);
         anim.SetBool("Reload", playerShot.reload);
         anim.SetBool("Pistol", Pistol);
         anim.SetBool("TwoHanded", TwoHanded);
+        anim.SetBool("Running", isRunning);
+        anim.SetBool("IsMoving", playerMove.moving);
     }
 
     public void ReloadingGun()
@@ -57,6 +66,10 @@ public class PlayerAnimations : MonoBehaviour {
             anim.SetTrigger("Reloading");
             playerShot.emptyGun = false;
             playerShot.shotsDone = 0;
+        }
+        else
+        {
+            anim.ResetTrigger("Reloading");
         }
     }
 
@@ -69,5 +82,15 @@ public class PlayerAnimations : MonoBehaviour {
     public void MagOn()
     {
         mag.SetActive(true);
+    }
+
+    public void IkOff()
+    {
+        handIk.ikActive = false;
+    }
+
+    public void IkOn()
+    {
+        handIk.ikActive = true;
     }
 }

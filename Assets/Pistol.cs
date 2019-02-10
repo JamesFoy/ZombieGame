@@ -11,7 +11,7 @@ public class Pistol : MonoBehaviour {
 
     PlayerIndex one; // sets how many players are in the game using controllers. This sets 1 player as player one.  
 
-    private bool shoot;
+    public bool shoot;
 
     // Use this for initialization
     void Start ()

@@ -14,6 +14,11 @@ public class PlayerShooting : MonoBehaviour {
     PlayerMovement playerMove;
 
     [SerializeField]
+    GameObject shot;
+
+    ParticleSystem fire;
+
+    [SerializeField]
     Weapons weapons;
 
     [SerializeField]
@@ -45,6 +50,8 @@ public class PlayerShooting : MonoBehaviour {
         laserLine = GetComponentInChildren<LineRenderer>();
         Audio = GetComponent<CharacterAudioManager>();
         playerAnim = GetComponent<PlayerAnimations>();
+
+        fire = shot.GetComponent<ParticleSystem>();
     }
 	
 	// Update is called once per frame
@@ -52,7 +59,6 @@ public class PlayerShooting : MonoBehaviour {
     {
         if (playerControl.state.Triggers.Right == 1 && Time.time > nextFire && shotsDone < weapons.MaxShots)
         {
-            Debug.Log(shotsDone);
             StartCoroutine(ShootLaser());
 
             nextFire = Time.time + fireRate;
@@ -107,5 +113,10 @@ public class PlayerShooting : MonoBehaviour {
         laserLine.enabled = true;
         yield return shotDuration;
         laserLine.enabled = false;
+    }
+
+    public void Shot()
+    {
+        fire.Play();
     }
 }
