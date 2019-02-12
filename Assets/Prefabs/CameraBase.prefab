@@ -492,6 +492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iKControl: {fileID: 0}
   playerControl: {fileID: 0}
+  startPosition: {fileID: 0}
   aimCamera: {fileID: 1288057023192032}
   mainCamera: {fileID: 1665334701954606}
   CameraMoveSpeed: 2000

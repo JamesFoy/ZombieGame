@@ -12,6 +12,9 @@ public class CameraFollow : MonoBehaviour {
     PlayerControl playerControl;
 
     [SerializeField]
+    Transform startPosition;
+
+    [SerializeField]
     GameObject aimCamera;
 
     [SerializeField]
@@ -70,6 +73,12 @@ public class CameraFollow : MonoBehaviour {
         {
             return isAiming;
         }
+    }
+
+    private void OnEnable()
+    {
+        mainCamera.transform.position = startPosition.position;
+        mainCamera.transform.rotation = startPosition.rotation;
     }
 
     private void Awake()

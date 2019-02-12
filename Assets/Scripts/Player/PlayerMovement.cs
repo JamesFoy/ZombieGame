@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool moving;
 
-    private void Start()
+    private void Awake()
     {
         playerAnim = GetComponent<PlayerAnimations>();
         rb = GetComponent<Rigidbody>();
