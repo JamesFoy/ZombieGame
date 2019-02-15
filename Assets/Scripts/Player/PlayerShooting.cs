@@ -7,14 +7,14 @@ public class PlayerShooting : MonoBehaviour {
 
     PlayerControl playerControl;
 
+    [SerializeField]
+    ParticleSystem firingParticle;
+
     PlayerAnimations playerAnim;
 
     CharacterAudioManager Audio;
 
     PlayerMovement playerMove;
-
-    [SerializeField]
-    GameObject shot;
 
     ParticleSystem fire;
 
@@ -42,6 +42,9 @@ public class PlayerShooting : MonoBehaviour {
 
     private WaitForSeconds shotDuration = new WaitForSeconds(.07f);
 
+    [SerializeField]
+    LayerMask layer;
+
     // Use this for initialization
     void Start ()
     {
@@ -51,7 +54,8 @@ public class PlayerShooting : MonoBehaviour {
         Audio = GetComponent<CharacterAudioManager>();
         playerAnim = GetComponent<PlayerAnimations>();
 
-        fire = shot.GetComponent<ParticleSystem>();
+        layer |= Physics.IgnoreRaycastLayer;
+        layer = ~layer;
     }
 	
 	// Update is called once per frame
@@ -59,20 +63,23 @@ public class PlayerShooting : MonoBehaviour {
     {
         if (playerControl.state.Triggers.Right == 1 && Time.time > nextFire && shotsDone < weapons.MaxShots)
         {
-            StartCoroutine(ShootLaser());
+            //StartCoroutine(ShootLaser());
 
             nextFire = Time.time + fireRate;
             isShooting = true;
             shotsDone++;
             RaycastHit Hit;
 
-            laserLine.SetPosition(0, shootT.position);
+            firingParticle.Play();
+
+            //laserLine.SetPosition(0, shootT.position);
 
             Vector3 fwd = shootT.transform.TransformDirection(Vector3.forward);
-            Debug.DrawRay(shootT.transform.position, fwd * 30, Color.green);
-            if (Physics.Raycast(shootT.transform.position, fwd, out Hit, 50))
+            Debug.DrawRay(shootT.transform.position, fwd * 100, Color.green);
+            if (Physics.Raycast(shootT.transform.position, fwd, out Hit, 100, layer))
             {
-                laserLine.SetPosition(1, Hit.point);
+                //laserLine.SetPosition(1, Hit.point);
+                Debug.Log(Hit);
 
                 if (Hit.collider.tag == "Enemy")
                 {
@@ -82,7 +89,7 @@ public class PlayerShooting : MonoBehaviour {
             }
             else
             {
-                laserLine.SetPosition(1, shootT.transform.position + (fwd * 30));
+                //laserLine.SetPosition(1, shootT.transform.position + (fwd * 30));
             }
         }
         else
@@ -108,12 +115,12 @@ public class PlayerShooting : MonoBehaviour {
         }
     }
 
-    private IEnumerator ShootLaser()
-    {
-        laserLine.enabled = true;
-        yield return shotDuration;
-        laserLine.enabled = false;
-    }
+    //private IEnumerator ShootLaser()
+    //{
+    //    laserLine.enabled = true;
+    //    yield return shotDuration;
+    //    laserLine.enabled = false;
+    //}
 
     public void Shot()
     {
