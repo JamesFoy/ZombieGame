@@ -65,6 +65,9 @@ public class CameraFollow : MonoBehaviour {
     [SerializeField]
     LayerMask layerMask;
 
+    [SerializeField]
+    Canvas uiCanvas;
+
     GamePadState state;
 
     public bool IsAiming
@@ -77,6 +80,7 @@ public class CameraFollow : MonoBehaviour {
 
     private void OnEnable()
     {
+        uiCanvas.enabled = false;
         mainCamera.transform.position = startPosition.position;
         mainCamera.transform.rotation = startPosition.rotation;
     }
@@ -155,6 +159,7 @@ public class CameraFollow : MonoBehaviour {
 
     void Aiming()
     {
+        uiCanvas.enabled = true;
         aimCamera.SetActive(true);
         mainCamera.SetActive(false);
         iKControl.activeIK = true;
@@ -163,6 +168,7 @@ public class CameraFollow : MonoBehaviour {
 
     void NotAiming()
     {
+        uiCanvas.enabled = false;
         aimCamera.SetActive(false);
         mainCamera.SetActive(true);
         iKControl.activeIK = false;
