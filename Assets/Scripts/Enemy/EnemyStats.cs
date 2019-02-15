@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 [Serializable]
-public class EnemyStats
+public class    EnemyStats
 {
     [SerializeField]
     private int enemyHealth;
@@ -19,6 +19,7 @@ public class EnemyStats
         set
         {
             this.enemyHealth = value;
+            Debug.Log("Enemy Health" + enemyHealth);
         }
     }
 }

@@ -54,8 +54,8 @@ public class PlayerShooting : MonoBehaviour {
         Audio = GetComponent<CharacterAudioManager>();
         playerAnim = GetComponent<PlayerAnimations>();
 
-        layer |= Physics.IgnoreRaycastLayer;
-        layer = ~layer;
+        //layer |= Physics.IgnoreRaycastLayer;
+        //layer = ~layer;
     }
 	
 	// Update is called once per frame
