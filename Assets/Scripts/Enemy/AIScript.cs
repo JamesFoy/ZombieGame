@@ -42,8 +42,9 @@ public class AIScript : MonoBehaviour {
 
         if (enemy.Health <= 0)
         {
+            Debug.Log("Dead");
             isDead = true;
-            RunDeadState();
+            currBehaviour = Behaviours.Dead;
         }
         else
         {
@@ -62,15 +63,19 @@ public class AIScript : MonoBehaviour {
                 RunCombatState();
                 break;
             case Behaviours.Dead:
+                RunDeadState();
                 break;
         }
     }
 
     void RunDeadState()
     {
-        agent.SetDestination(this.transform.position);
-        currBehaviour = Behaviours.Dead;
-        isMoving = false;
+        if (isDead == true)
+        {
+            currBehaviour = Behaviours.Dead;
+            agent.SetDestination(this.transform.position);
+            isMoving = false;
+        }
     }
 
     private void RunCombatState()

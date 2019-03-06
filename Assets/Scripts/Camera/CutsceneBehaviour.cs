@@ -30,7 +30,7 @@ public class CutsceneBehaviour : MonoBehaviour {
     [SerializeField]
     NavMeshAgent enemyAgent;
     [SerializeField]
-    Enemy enemyBehaviour;
+    AIScript enemyBehaviour;
     [SerializeField]
     PlayableDirector director;
     [SerializeField]

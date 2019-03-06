@@ -84,7 +84,7 @@ public class PlayerShooting : MonoBehaviour {
                 if (Hit.collider.tag == "Enemy")
                 {
                     print("enemy");
-                    Hit.collider.GetComponent<Enemy>().enemy.Health -= weapons.AkDamge;
+                    Hit.collider.GetComponent<AIScript>().enemy.Health -= weapons.AkDamge;
                 }
             }
             else

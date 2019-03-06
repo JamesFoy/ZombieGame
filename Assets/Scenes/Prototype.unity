@@ -881,18 +881,12 @@ Light:
 NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 195770704958734202, guid: 58d59a87ecfe83c40a9f39a0e67b07b8,
     type: 2}
-  m_PrefabInternal: {fileID: 1432788675}
---- !u!114 &344013635 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114114472003666974, guid: 58d59a87ecfe83c40a9f39a0e67b07b8,
-    type: 2}
-  m_PrefabInternal: {fileID: 1432788675}
-  m_Script: {fileID: 11500000, guid: 8dab5a45f9cf5dc42a916ca537400dc8, type: 3}
+  m_PrefabInternal: {fileID: 1563937494}
 --- !u!4 &359817381 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4355234836856732, guid: 58d59a87ecfe83c40a9f39a0e67b07b8,
     type: 2}
-  m_PrefabInternal: {fileID: 1432788675}
+  m_PrefabInternal: {fileID: 1563937494}
 --- !u!1 &366502634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,7 +1343,27 @@ GameObject:
 Animator:
   m_CorrespondingSourceObject: {fileID: 95837711517161516, guid: 58d59a87ecfe83c40a9f39a0e67b07b8,
     type: 2}
-  m_PrefabInternal: {fileID: 1432788675}
+  m_PrefabInternal: {fileID: 1563937494}
+--- !u!1 &931498600 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1473160507025768, guid: 58d59a87ecfe83c40a9f39a0e67b07b8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1563937494}
+--- !u!114 &931498602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 931498600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dab5a45f9cf5dc42a916ca537400dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  player:
+    playerHealth: 3
+    money: 0
 --- !u!1 &945061659
 GameObject:
   m_ObjectHideFlags: 0
@@ -3656,7 +3670,7 @@ MonoBehaviour:
   collider: {fileID: 637590230}
   handPlacementIK: {fileID: 637590231}
   enemyAgent: {fileID: 344013634}
-  enemyBehaviour: {fileID: 344013635}
+  enemyBehaviour: {fileID: 0}
   director: {fileID: 945061660}
   fade: {fileID: 982093988}
   rb: {fileID: 637590229}
@@ -4334,7 +4348,40 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1288057023192032, guid: 568293d3bf11e414cb08bbd4e021865f,
     type: 2}
   m_PrefabInternal: {fileID: 1252272886}
---- !u!1001 &1432788675
+--- !u!1 &1448660257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1448660258}
+  m_Layer: 0
+  m_Name: Lighting
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1448660258
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1448660257}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.253, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1075930618}
+  - {fileID: 1848705295}
+  - {fileID: 1667123817}
+  - {fileID: 278472796}
+  - {fileID: 342900309}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1563937494
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -4378,70 +4425,15 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 637590227}
-    - target: {fileID: 114114472003666974, guid: 58d59a87ecfe83c40a9f39a0e67b07b8,
+    - target: {fileID: 114062588519990692, guid: 58d59a87ecfe83c40a9f39a0e67b07b8,
         type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 637590227}
-    - target: {fileID: 4355234836856732, guid: 58d59a87ecfe83c40a9f39a0e67b07b8, type: 2}
-      propertyPath: m_LocalScale.x
+      propertyPath: damage
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4355234836856732, guid: 58d59a87ecfe83c40a9f39a0e67b07b8, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114128624204466412, guid: 58d59a87ecfe83c40a9f39a0e67b07b8,
-        type: 2}
-      propertyPath: findDistance
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114128624204466412, guid: 58d59a87ecfe83c40a9f39a0e67b07b8,
-        type: 2}
-      propertyPath: chaseDistance
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114128624204466412, guid: 58d59a87ecfe83c40a9f39a0e67b07b8,
-        type: 2}
-      propertyPath: enemy.enemyHealth
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114062588519990692, guid: 58d59a87ecfe83c40a9f39a0e67b07b8, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 58d59a87ecfe83c40a9f39a0e67b07b8, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1448660257
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1448660258}
-  m_Layer: 0
-  m_Name: Lighting
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1448660258
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1448660257}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.253, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1075930618}
-  - {fileID: 1848705295}
-  - {fileID: 1667123817}
-  - {fileID: 278472796}
-  - {fileID: 342900309}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1568163879
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 [Serializable]
-public class    EnemyStats
+public class EnemyStats
 {
     [SerializeField]
     private int enemyHealth;
