@@ -4,9 +4,6 @@ using XInputDotNetPure;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField]
-    PlayerStats player;
-
     PlayerAnimations playerAnim;
 
     PlayerControl playerControl;
@@ -81,12 +78,6 @@ public class PlayerMovement : MonoBehaviour
         {
             speed = 11;
             playerAnim.isRunning = false;
-        }
-
-        if (player.Health <= 0)
-        {
-            Debug.Log("Dead");
-            Destroy(this.gameObject);
         }
     }
 

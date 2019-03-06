@@ -7,19 +7,21 @@ public class EnemyAttack : MonoBehaviour {
     [SerializeField]
     private int damage;
 
+    private GameObject Player;
+
     [SerializeField]
     PlayerStats player;
-
-    void Start()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            player.Health -= damage; 
+            player.Health -= damage;
+        }
+
+        if (player.Health <= 0)
+        {
+            Destroy(other.gameObject);
         }
     }
 }

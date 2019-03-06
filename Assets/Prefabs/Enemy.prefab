@@ -666,6 +666,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4354547949732312}
   - component: {fileID: 135937780518748208}
+  - component: {fileID: 114351672402874338}
   m_Layer: 0
   m_Name: EnemyAttackPoint
   m_TagString: Untagged
@@ -848,7 +849,7 @@ GameObject:
   - component: {fileID: 4355234836856732}
   - component: {fileID: 95837711517161516}
   - component: {fileID: 136655478200228912}
-  - component: {fileID: 114062588519990692}
+  - component: {fileID: 114370465852352824}
   - component: {fileID: 114128624204466412}
   - component: {fileID: 195770704958734202}
   - component: {fileID: 82879705740522340}
@@ -2829,21 +2830,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114062588519990692
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1566419255334196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dab5a45f9cf5dc42a916ca537400dc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  player:
-    playerHealth: 3
-    money: 0
 --- !u!114 &114128624204466412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2864,6 +2850,36 @@ MonoBehaviour:
   points: []
   destPoint: 0
   currBehaviour: 0
+--- !u!114 &114351672402874338
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1473160507025768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dab5a45f9cf5dc42a916ca537400dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  player:
+    playerHealth: 3
+    money: 0
+--- !u!114 &114370465852352824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1566419255334196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dab5a45f9cf5dc42a916ca537400dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  player:
+    playerHealth: 3
+    money: 0
 --- !u!135 &135937780518748208
 SphereCollider:
   m_ObjectHideFlags: 1
