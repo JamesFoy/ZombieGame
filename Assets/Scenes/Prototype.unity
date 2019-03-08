@@ -4911,8 +4911,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1640168474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.95, y: 4.85, z: -10.35}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: -3.54, y: 4.77, z: -9.7}
+  m_LocalScale: {x: 3.31, y: 0.1, z: 0}
   m_Children: []
   m_Father: {fileID: 1448660258}
   m_RootOrder: 6
@@ -4986,8 +4986,8 @@ MonoBehaviour:
   nonLightmappedOnly: 0
   lightTypeExtent: 1
   spotLightShape: 0
-  shapeWidth: 0.5
-  shapeHeight: 0.5
+  shapeWidth: 3.31
+  shapeHeight: 0.1
   aspectRatio: 1
   shapeRadius: 0
   maxSmoothness: 1
@@ -4995,7 +4995,7 @@ MonoBehaviour:
   useOldInspector: 0
   featuresFoldout: 1
   showAdditionalSettings: 0
-  displayLightIntensity: 193.84
+  displayLightIntensity: 48.7
   displayAreaLightEmissiveMesh: 0
 --- !u!108 &1640168478
 Light:
@@ -5007,8 +5007,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 246.80475
-  m_Range: 11
+  m_Intensity: 46.832905
+  m_Range: 7.8
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -5028,7 +5028,7 @@ Light:
     m_Bits: 4294967295
   m_Lightmapping: 4
   m_LightShadowCasterMode: 2
-  m_AreaSize: {x: 0.5, y: 0.5}
+  m_AreaSize: {x: 3.31, y: 0.1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
