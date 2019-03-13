@@ -429,7 +429,7 @@ Material:
     - _NormalMapSpace3: 0
     - _NormalScale: 1
     - _NormalScale0: 1
-    - _NormalScale1: 1.188
+    - _NormalScale1: 1
     - _NormalScale2: 1
     - _NormalScale3: 1
     - _ObjectScaleAffectTile: 0

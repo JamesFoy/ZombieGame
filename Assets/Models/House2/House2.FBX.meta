@@ -26,6 +26,26 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Brick
     second: {fileID: 2100000, guid: 9dc0ce329e0dd0a4488063432c3f1c56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door
+    second: {fileID: 2100000, guid: 80c78cfd524995645962c2bae9a1e7e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 772a7ab65b673a84c89600d1e03ec224, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic
+    second: {fileID: 2100000, guid: 80c78cfd524995645962c2bae9a1e7e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roof
+    second: {fileID: 2100000, guid: d32428f6e27925649b489f2ce5484992, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
