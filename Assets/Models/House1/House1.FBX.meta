@@ -20,6 +20,8 @@ ModelImporter:
     3300002: Roof
     4300000: Base
     4300002: Roof
+    6400000: Base
+    6400002: Roof
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -73,7 +75,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 2.1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

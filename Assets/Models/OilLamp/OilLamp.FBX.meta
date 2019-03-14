@@ -17,6 +17,8 @@ ModelImporter:
     3300002: Glass
     4300000: Cylinder001
     4300002: Glass
+    6400000: Cylinder001
+    6400002: Glass
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -60,7 +62,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 0.4
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 0
     importCameras: 1
