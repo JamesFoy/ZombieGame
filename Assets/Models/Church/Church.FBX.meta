@@ -12,8 +12,10 @@ ModelImporter:
     400004: //RootNode
     400006: Roof
     2100000: 03 - Default
-    2100002: 02 - Default
-    2100004: 01 - Default
+    2100002: Planks
+    2100004: Door
+    2100006: 02 - Default
+    2100008: 01 - Default
     2300000: Building
     2300002: Chimney
     2300004: Roof
@@ -31,7 +33,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 01 - Default
-    second: {fileID: 2100000, guid: 4aab6591b3a71dc439211da8c2375ff4, type: 2}
+    second: {fileID: 2100000, guid: 18c439136c2c0e640bfd72d71c97c11c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -42,6 +44,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: 03 - Default
     second: {fileID: 2100000, guid: 4aab6591b3a71dc439211da8c2375ff4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door
+    second: {fileID: 2100000, guid: 51cf821765f1f8c46bd5c3a842806b8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Planks
+    second: {fileID: 2100000, guid: 9025c2f350a74c843af23907ef3f3899, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
