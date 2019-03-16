@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\PlayerMovementRigidbody.cs" />
     <Compile Include="Assets\Scripts\PlayerMovementTransform.cs" />
     <Compile Include="Assets\Scripts\Weapons.cs" />
+    <Compile Include="Assets\TurretBehaviour.cs" />
     <None Include="Assets\Allegorithmic\Plugins\engine_build_info.txt" />
     <None Include="Assets\Allegorithmic\Plugins\EULA.txt" />
     <Reference Include="Unity.RenderPipelines.Core.Editor">
