@@ -79,11 +79,9 @@ public class PlayerShooting : MonoBehaviour {
             if (Physics.Raycast(shootT.transform.position, fwd, out Hit, 100, layer))
             {
                 //laserLine.SetPosition(1, Hit.point);
-                Debug.Log(Hit);
 
                 if (Hit.collider.tag == "Enemy")
                 {
-                    print("enemy");
                     Hit.collider.GetComponent<AIScript>().enemy.Health -= weapons.AkDamge;
                 }
             }

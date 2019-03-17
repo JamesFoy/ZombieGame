@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using XInputDotNetPure;
 
 public class CameraFollow : MonoBehaviour {
@@ -13,9 +14,6 @@ public class CameraFollow : MonoBehaviour {
 
     [SerializeField]
     Transform startPosition;
-
-    [SerializeField]
-    GameObject aimCamera;
 
     [SerializeField]
     GameObject mainCamera;
@@ -66,7 +64,7 @@ public class CameraFollow : MonoBehaviour {
     LayerMask layerMask;
 
     [SerializeField]
-    Canvas uiCanvas;
+    Image crossHair;
 
     GamePadState state;
 
@@ -80,7 +78,7 @@ public class CameraFollow : MonoBehaviour {
 
     private void OnEnable()
     {
-        uiCanvas.enabled = false;
+        crossHair.enabled = false;
         mainCamera.transform.position = startPosition.position;
         mainCamera.transform.rotation = startPosition.rotation;
     }
@@ -88,7 +86,6 @@ public class CameraFollow : MonoBehaviour {
     private void Awake()
     {
         mainCamera.SetActive(true);
-        aimCamera.SetActive(false);
     }
 
     // Use this for initialization
@@ -159,18 +156,16 @@ public class CameraFollow : MonoBehaviour {
 
     void Aiming()
     {
-        uiCanvas.enabled = true;
-        aimCamera.SetActive(true);
-        mainCamera.SetActive(false);
+        crossHair.enabled = true;
+        Camera.main.fieldOfView = 20;
         iKControl.activeIK = true;
         isAiming = true;
     }
 
     void NotAiming()
     {
-        uiCanvas.enabled = false;
-        aimCamera.SetActive(false);
-        mainCamera.SetActive(true);
+        crossHair.enabled = false;
+        Camera.main.fieldOfView = 40;
         iKControl.activeIK = false;
         isAiming = false;
     }

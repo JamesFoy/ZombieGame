@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class AIScript : MonoBehaviour {
 
+    [SerializeField]
+    public UIScript uiScript;
+
     private Animator anim;
     [SerializeField]
     private bool isDead;
@@ -72,9 +75,11 @@ public class AIScript : MonoBehaviour {
     {
         if (isDead == true)
         {
+            uiScript.score += 100;
             currBehaviour = Behaviours.Dead;
             agent.SetDestination(this.transform.position);
             isMoving = false;
+            Destroy(this.gameObject);
         }
     }
 

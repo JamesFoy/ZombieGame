@@ -8,25 +8,43 @@ public class TurretBehaviour : MonoBehaviour {
     [SerializeField]
     ParticleSystem firingParticle;
 
+    private float nextFire = 0.0f;
+
+    public AudioSource turretShot;
+
+    private Transform startRotation;
+
     float strength = 1f;
     private Quaternion targetRotation;
     private float str;
     private Transform target;
     private bool isAiming = false;
+    private float fireRate = 1;
+
+    void Awake()
+    {
+        startRotation = this.gameObject.transform;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
-            Debug.Log("Aiming");
             target = other.gameObject.transform;
         }
     }
 
     private void Update()
     {
-        if (isAiming == true)
+        if (target == null)
         {
+            this.gameObject.transform.rotation = startRotation.rotation;
+        }
+
+        if (isAiming == true && Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            turretShot.Play();
             firingParticle.Play();
             firingParticle.enableEmission = true;
             //Shoot();
@@ -35,7 +53,7 @@ public class TurretBehaviour : MonoBehaviour {
 
     private void Shoot()
     {
-        Debug.Log("Shooting");
+        //Debug.Log("Shooting");
 
     }
 
