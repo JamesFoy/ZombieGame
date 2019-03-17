@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,7 +28,15 @@ public class TurretBehaviour : MonoBehaviour {
         if (isAiming == true)
         {
             firingParticle.Play();
-        }
+            firingParticle.enableEmission = true;
+            //Shoot();
+        } 
+    }
+
+    private void Shoot()
+    {
+        Debug.Log("Shooting");
+
     }
 
     private void LateUpdate()
