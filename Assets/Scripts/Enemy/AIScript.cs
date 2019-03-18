@@ -45,7 +45,6 @@ public class AIScript : MonoBehaviour {
 
         if (enemy.Health <= 0)
         {
-            Debug.Log("Dead");
             isDead = true;
             currBehaviour = Behaviours.Dead;
         }

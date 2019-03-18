@@ -19,7 +19,6 @@ public class EnemyStats
         set
         {
             this.enemyHealth = value;
-            Debug.Log("Enemy Health" + enemyHealth);
         }
     }
 }

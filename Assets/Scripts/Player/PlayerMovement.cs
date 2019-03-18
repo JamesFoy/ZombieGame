@@ -16,14 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float speed;
 
-    [SerializeField]
-    private float aimSpeed;
-
-    [SerializeField]
-    private float offset = 1f;
-
     private float turnSmoothing = 15f; // A smoothing value for turning the player.
-    private float speedDampTime = 0.1f; // The damping for the speed parameter
 
     [SerializeField]
     public float h; // Moving around (H & V are input)

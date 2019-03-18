@@ -21,42 +21,14 @@ public class CameraFollow : MonoBehaviour {
     [SerializeField]
     private float CameraMoveSpeed;
     public GameObject CameraFollowObj;
-    float t = 0;
-    Vector3 FollowPOS;
     [SerializeField]
     private float clampAngle = 80.0f;
     [SerializeField]
     private float inputSensitivity = 150.0f;
     [SerializeField]
-    private GameObject CameraObj;
+    private float rotY;
     [SerializeField]
-    private GameObject CameraStart;
-    [SerializeField]
-    private GameObject PlayerObj;
-    [SerializeField]
-    private float camDistanceXToPlayer;
-    [SerializeField]
-    private float camDistanceYToPlayer;
-    [SerializeField]
-    private float camDistanceZToPlayer;
-    [SerializeField]
-    private float mouseX;
-    [SerializeField]
-    private float mouseY;
-    [SerializeField]
-    private float finalInputX;
-    [SerializeField]
-    private float finalInputY;
-    [SerializeField]
-    private float smoothX;
-    [SerializeField]
-    private float smoothY;
-    [SerializeField]
-    private float rotY = 0.0f;
-    [SerializeField]
-    private float rotX = 0.0f;
-    [SerializeField]
-    private float fovSpeed = 100f;
+    private float rotX;
     [SerializeField]
     public bool isAiming;
 
@@ -83,11 +55,6 @@ public class CameraFollow : MonoBehaviour {
         mainCamera.transform.rotation = startPosition.rotation;
     }
 
-    private void Awake()
-    {
-        mainCamera.SetActive(true);
-    }
-
     // Use this for initialization
     void Start () {
         Vector3 rot = transform.localRotation.eulerAngles;
@@ -100,13 +67,9 @@ public class CameraFollow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //the rotation of the sticks/mouse
+        //the rotation of the sticks
         float inputX = Input.GetAxis("RightStickHorizontal");
         float inputY = Input.GetAxis("RightStickVertical");
-        //mouseX = Input.GetAxis("Mouse X");
-        //mouseY = Input.GetAxis("Mouse Y");
-        //finalInputX = inputX + mouseX;
-        //finalInputY = inputY + mouseY;
 
         rotY += inputX * inputSensitivity * Time.deltaTime;
         rotX += inputY * inputSensitivity * Time.deltaTime;
@@ -116,7 +79,7 @@ public class CameraFollow : MonoBehaviour {
         Quaternion localRotation = Quaternion.Euler(rotX, rotY, 0.0f);
         transform.rotation = localRotation;
 
-        //Keyboard & Mouse
+        //Controller Aiming
         if (playerControl.state.Triggers.Left == 1)
         {
 
@@ -126,15 +89,6 @@ public class CameraFollow : MonoBehaviour {
         {
 
             NotAiming();
-        }
-
-        RaycastHit hit;
-
-        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
-        Debug.DrawRay(Camera.main.transform.position, transform.forward * 4, Color.red);
-        if (Physics.Raycast(ray, out hit, 4, ~layerMask))
-        {
-            print(hit.transform.name);
         }
     }
 

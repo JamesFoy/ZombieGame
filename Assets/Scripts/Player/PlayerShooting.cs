@@ -16,8 +16,6 @@ public class PlayerShooting : MonoBehaviour {
 
     PlayerMovement playerMove;
 
-    ParticleSystem fire;
-
     [SerializeField]
     Weapons weapons;
 
@@ -26,21 +24,17 @@ public class PlayerShooting : MonoBehaviour {
 
     [SerializeField]
     public bool isShooting = false;
-
-    private bool aiming = false;
     public bool emptyGun = false;
     public bool reload = false;
 
     [SerializeField]
     private float fireRate;
-    private float nextFire = 0.0f;
+    private float nextFire;
 
     [SerializeField]
     public float shotsDone = 0;
 
     private LineRenderer laserLine;
-
-    private WaitForSeconds shotDuration = new WaitForSeconds(.07f);
 
     [SerializeField]
     LayerMask layer;
@@ -53,9 +47,6 @@ public class PlayerShooting : MonoBehaviour {
         laserLine = GetComponentInChildren<LineRenderer>();
         Audio = GetComponent<CharacterAudioManager>();
         playerAnim = GetComponent<PlayerAnimations>();
-
-        //layer |= Physics.IgnoreRaycastLayer;
-        //layer = ~layer;
     }
 	
 	// Update is called once per frame
@@ -63,8 +54,6 @@ public class PlayerShooting : MonoBehaviour {
     {
         if (playerControl.state.Triggers.Right == 1 && Time.time > nextFire && shotsDone < weapons.MaxShots)
         {
-            //StartCoroutine(ShootLaser());
-
             nextFire = Time.time + fireRate;
             isShooting = true;
             shotsDone++;
@@ -72,22 +61,11 @@ public class PlayerShooting : MonoBehaviour {
 
             firingParticle.Play();
 
-            //laserLine.SetPosition(0, shootT.position);
-
             Vector3 fwd = shootT.transform.TransformDirection(Vector3.forward);
             Debug.DrawRay(shootT.transform.position, fwd * 100, Color.green);
-            if (Physics.Raycast(shootT.transform.position, fwd, out Hit, 100, layer))
+            if (Physics.Raycast(shootT.transform.position, fwd, out Hit, 100, layer) && Hit.collider.tag == "Enemy")
             {
-                //laserLine.SetPosition(1, Hit.point);
-
-                if (Hit.collider.tag == "Enemy")
-                {
-                    Hit.collider.GetComponent<AIScript>().enemy.Health -= weapons.AkDamge;
-                }
-            }
-            else
-            {
-                //laserLine.SetPosition(1, shootT.transform.position + (fwd * 30));
+                Hit.collider.GetComponent<AIScript>().enemy.Health -= weapons.AkDamge;
             }
         }
         else
@@ -111,17 +89,5 @@ public class PlayerShooting : MonoBehaviour {
         {
             reload = false;
         }
-    }
-
-    //private IEnumerator ShootLaser()
-    //{
-    //    laserLine.enabled = true;
-    //    yield return shotDuration;
-    //    laserLine.enabled = false;
-    //}
-
-    public void Shot()
-    {
-        //fire.Play();
     }
 }

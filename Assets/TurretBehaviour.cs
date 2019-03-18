@@ -8,7 +8,7 @@ public class TurretBehaviour : MonoBehaviour {
     [SerializeField]
     ParticleSystem firingParticle;
 
-    private float nextFire = 0.0f;
+    private float nextFire;
 
     public AudioSource turretShot;
 
@@ -38,23 +38,29 @@ public class TurretBehaviour : MonoBehaviour {
     {
         if (target == null)
         {
+            firingParticle.Stop();
+            firingParticle.enableEmission = false;
             this.gameObject.transform.rotation = startRotation.rotation;
+            isAiming = false;
         }
 
         if (isAiming == true && Time.time > nextFire)
         {
-            nextFire = Time.time + fireRate;
-            turretShot.Play();
-            firingParticle.Play();
-            firingParticle.enableEmission = true;
-            //Shoot();
+            Shoot();
         } 
     }
 
     private void Shoot()
     {
-        //Debug.Log("Shooting");
+        nextFire = Time.time + fireRate;
+        turretShot.Play();
+        firingParticle.Play();
+        firingParticle.enableEmission = true;
 
+        if (target != null)
+        {
+            target.GetComponent<AIScript>().enemy.Health--;
+        }
     }
 
     private void LateUpdate()
@@ -64,7 +70,7 @@ public class TurretBehaviour : MonoBehaviour {
 
     void Aim ()
     {
-        if (target != null)
+        if (target)
         {
             isAiming = true;
             //This line finds the rotation from this object to the target
@@ -74,9 +80,49 @@ public class TurretBehaviour : MonoBehaviour {
             //This line simply lerps the rotation of the object
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, str);
         }
-        else
+        else if (target == null)
         {
+            target = FindClosestTarget();
             isAiming = false;
         }
-	}
+    }
+
+    private Transform FindClosestTarget()
+    {
+        // Find all game objects with tag Enemy
+
+        GameObject[] enemies;
+
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        GameObject closest = null;
+
+        var distance = Mathf.Infinity;
+
+        var position = transform.position;
+
+        // Iterate through them and find the closest one
+
+        foreach (GameObject enemy in enemies)
+        {
+            var diff = (enemy.transform.position - position);
+
+            var curDistance = diff.sqrMagnitude;
+
+            if (curDistance < distance)
+            {
+
+                closest = enemy;
+
+                distance = curDistance;
+
+            }
+
+        }
+        if (enemies != null)
+        {
+            return closest.transform;
+        }
+        return null;
+    }
 }
