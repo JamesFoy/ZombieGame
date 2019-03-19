@@ -165,7 +165,7 @@ ModelImporter:
       might lower retargeting quality:\n\t'swat:Neck1' is inbetween humanoid transforms
       and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
-    animationDoRetargetingWarnings: 0
+    animationDoRetargetingWarnings: 1
     importAnimatedCustomProperties: 0
     importConstraints: 1
     animationCompression: 3

@@ -25,6 +25,8 @@ public class AimingIKControl : MonoBehaviour
 
     private void OnAnimatorIK(int layerIndex)
     {
+        if (false) return;
+
         bspine = anim.GetBoneTransform(HumanBodyBones.Spine);
         Vector3 dir = target.position - transform.position;
 

@@ -119,7 +119,7 @@ public class TurretBehaviour : MonoBehaviour {
             }
 
         }
-        if (enemies != null)
+        if (enemies.Length > 0)
         {
             return closest.transform;
         }
