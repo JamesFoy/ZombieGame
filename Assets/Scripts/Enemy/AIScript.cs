@@ -2,8 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AIScript : MonoBehaviour {
+
+    public event Action<AIScript> HaveDied;
 
     [SerializeField]
     public UIScript uiScript;
@@ -30,6 +33,7 @@ public class AIScript : MonoBehaviour {
 
     void Start()
     {
+        uiScript = GameObject.FindGameObjectWithTag("UI").GetComponent<UIScript>();
         anim = GetComponent<Animator>();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -47,6 +51,10 @@ public class AIScript : MonoBehaviour {
         {
             isDead = true;
             currBehaviour = Behaviours.Dead;
+            if (HaveDied != null)
+            {
+                HaveDied.Invoke(this);
+            }
         }
         else
         {
@@ -78,6 +86,7 @@ public class AIScript : MonoBehaviour {
             currBehaviour = Behaviours.Dead;
             agent.SetDestination(this.transform.position);
             isMoving = false;
+            new WaitForSeconds(3.0f);
             Destroy(this.gameObject);
         }
     }

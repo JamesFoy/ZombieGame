@@ -13,6 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   components:
   - {fileID: 114205845947520454}
+  - {fileID: 114680563527547112}
 --- !u!114 &114205845947520454
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -67,10 +68,63 @@ MonoBehaviour:
     showEyeDropper: 1
   groundColor:
     m_OverrideState: 1
-    m_Value: {r: 0.254717, g: 0.254717, b: 0.254717, a: 1}
+    m_Value: {r: 0.254717, g: 0.254717, b: 0.254717, a: 0.3019608}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
   enableSunDisk:
     m_OverrideState: 1
     m_Value: 0
+--- !u!114 &114680563527547112
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb673446a9a2dfa408924fe9a56322e0, type: 3}
+  m_Name: LinearFog
+  m_EditorClassIdentifier: 
+  active: 1
+  colorMode:
+    m_OverrideState: 1
+    m_Value: 1
+  color:
+    m_OverrideState: 0
+    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  density:
+    m_OverrideState: 1
+    m_Value: 0.516
+    min: 0
+    max: 1
+  mipFogMaxMip:
+    m_OverrideState: 0
+    m_Value: 0.5
+    min: 0
+    max: 1
+  mipFogNear:
+    m_OverrideState: 1
+    m_Value: 0
+    min: 0
+  mipFogFar:
+    m_OverrideState: 1
+    m_Value: 1000
+    min: 0
+  fogStart:
+    m_OverrideState: 0
+    m_Value: 500
+    min: 0
+  fogEnd:
+    m_OverrideState: 0
+    m_Value: 1000
+    min: 0
+  fogHeightStart:
+    m_OverrideState: 0
+    m_Value: 0
+  fogHeightEnd:
+    m_OverrideState: 0
+    m_Value: 10

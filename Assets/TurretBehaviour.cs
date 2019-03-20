@@ -8,11 +8,16 @@ public class TurretBehaviour : MonoBehaviour {
     [SerializeField]
     ParticleSystem firingParticle;
 
+    [SerializeField]
+    SpawnScript spawnScript;
+
+    Rigidbody body;
+
     private float nextFire;
 
-    public AudioSource turretShot;
+    Quaternion storedRot;
 
-    private Transform startRotation;
+    public AudioSource turretShot;
 
     float strength = 1f;
     private Quaternion targetRotation;
@@ -21,16 +26,25 @@ public class TurretBehaviour : MonoBehaviour {
     private bool isAiming = false;
     private float fireRate = 1;
 
+    // Use this for initialization
     void Awake()
     {
-        startRotation = this.gameObject.transform;
+        body = GetComponent<Rigidbody>();
+
+        if (body == null)
+        {
+            Debug.LogError("Missing Rigidbody");
+            return;
+        }
+
+        storedRot = body.rotation;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
-            target = other.gameObject.transform;
+            target = FindClosestTarget();
         }
     }
 
@@ -38,9 +52,7 @@ public class TurretBehaviour : MonoBehaviour {
     {
         if (target == null)
         {
-            firingParticle.Stop();
-            firingParticle.enableEmission = false;
-            this.gameObject.transform.rotation = startRotation.rotation;
+            body.rotation = Quaternion.Lerp(transform.rotation, storedRot, Time.deltaTime);
             isAiming = false;
         }
 
@@ -48,6 +60,11 @@ public class TurretBehaviour : MonoBehaviour {
         {
             Shoot();
         } 
+        else
+        {
+            //firingParticle.Pause();
+//            firingParticle.enableEmission = false;
+        }
     }
 
     private void Shoot()
@@ -55,12 +72,9 @@ public class TurretBehaviour : MonoBehaviour {
         nextFire = Time.time + fireRate;
         turretShot.Play();
         firingParticle.Play();
-        firingParticle.enableEmission = true;
+//        firingParticle.enableEmission = true;
+        target.GetComponent<AIScript>().enemy.Health--;
 
-        if (target != null)
-        {
-            target.GetComponent<AIScript>().enemy.Health--;
-        }
     }
 
     private void LateUpdate()
@@ -82,20 +96,20 @@ public class TurretBehaviour : MonoBehaviour {
         }
         else if (target == null)
         {
-            target = FindClosestTarget();
+            //target = FindClosestTarget();
             isAiming = false;
         }
     }
 
     private Transform FindClosestTarget()
     {
+        isAiming = true;
+
         // Find all game objects with tag Enemy
 
-        GameObject[] enemies;
+        var enemies = spawnScript.SpawnedEnemies;
 
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-        GameObject closest = null;
+        AIScript closest = null;
 
         var distance = Mathf.Infinity;
 
@@ -103,7 +117,7 @@ public class TurretBehaviour : MonoBehaviour {
 
         // Iterate through them and find the closest one
 
-        foreach (GameObject enemy in enemies)
+        foreach (AIScript enemy in enemies)
         {
             var diff = (enemy.transform.position - position);
 
@@ -119,7 +133,7 @@ public class TurretBehaviour : MonoBehaviour {
             }
 
         }
-        if (enemies.Length > 0)
+        if (enemies.Count > 0)
         {
             return closest.transform;
         }
