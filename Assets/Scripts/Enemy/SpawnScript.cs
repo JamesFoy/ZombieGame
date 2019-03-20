@@ -8,8 +8,14 @@ public class SpawnScript : MonoBehaviour {
     [SerializeField]
     Transform spawnPoint;
 
-    [SerializeField]
+    public Wave wave;
+
     AIScript enemy;
+
+    AIScript enemyspawn;
+
+    static int spawnCount = 0;
+
     [SerializeField]
     float delayBetweenSpawns = 2.0f;
     [SerializeField]
@@ -33,12 +39,18 @@ public class SpawnScript : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        if (Time.time >= timeOfNextSpawn)
+        foreach (AIScript enemy in wave.enemyTypes)
         {
-            var enemySpawned = Instantiate(enemy, transform.position, Quaternion.identity, spawnPoint);
+            enemyspawn = enemy;
+        }
+
+        if (Time.time >= timeOfNextSpawn && wave.enemyCount > spawnCount)
+        {
+            var enemySpawned = Instantiate(enemyspawn, transform.position, Quaternion.identity, spawnPoint);
             enemySpawned.HaveDied += OnEnemyDied;
             spawnedEnemies.Add(enemySpawned);
             timeOfNextSpawn = Time.time + delayBetweenSpawns;
+            spawnCount++;
         }
 	}
 

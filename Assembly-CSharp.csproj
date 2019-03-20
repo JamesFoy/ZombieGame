@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\PlayerMovementRigidbody.cs" />
     <Compile Include="Assets\Scripts\PlayerMovementTransform.cs" />
     <Compile Include="Assets\Scripts\UI\UIScript.cs" />
+    <Compile Include="Assets\Scripts\Waves\Wave.cs" />
     <Compile Include="Assets\Scripts\Weapons.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />

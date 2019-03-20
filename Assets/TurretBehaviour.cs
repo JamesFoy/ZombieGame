@@ -40,7 +40,7 @@ public class TurretBehaviour : MonoBehaviour {
         storedRot = body.rotation;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
@@ -60,11 +60,6 @@ public class TurretBehaviour : MonoBehaviour {
         {
             Shoot();
         } 
-        else
-        {
-            //firingParticle.Pause();
-//            firingParticle.enableEmission = false;
-        }
     }
 
     private void Shoot()
@@ -72,7 +67,6 @@ public class TurretBehaviour : MonoBehaviour {
         nextFire = Time.time + fireRate;
         turretShot.Play();
         firingParticle.Play();
-//        firingParticle.enableEmission = true;
         target.GetComponent<AIScript>().enemy.Health--;
 
     }
