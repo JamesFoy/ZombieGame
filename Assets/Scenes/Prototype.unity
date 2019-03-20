@@ -5611,6 +5611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cab77ec0e0015447ad20149825f463f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 1822407955}
   enemy: {fileID: 114200220224704460, guid: 58d59a87ecfe83c40a9f39a0e67b07b8, type: 2}
   delayBetweenSpawns: 2
   timeOfNextSpawn: 1

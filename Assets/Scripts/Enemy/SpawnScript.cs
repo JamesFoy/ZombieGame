@@ -6,6 +6,9 @@ using UnityEngine;
 public class SpawnScript : MonoBehaviour {
 
     [SerializeField]
+    Transform spawnPoint;
+
+    [SerializeField]
     AIScript enemy;
     [SerializeField]
     float delayBetweenSpawns = 2.0f;
@@ -32,7 +35,7 @@ public class SpawnScript : MonoBehaviour {
     {
         if (Time.time >= timeOfNextSpawn)
         {
-            var enemySpawned = Instantiate(enemy, transform.position, Quaternion.identity);
+            var enemySpawned = Instantiate(enemy, transform.position, Quaternion.identity, spawnPoint);
             enemySpawned.HaveDied += OnEnemyDied;
             spawnedEnemies.Add(enemySpawned);
             timeOfNextSpawn = Time.time + delayBetweenSpawns;
