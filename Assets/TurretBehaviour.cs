@@ -8,7 +8,8 @@ public class TurretBehaviour : MonoBehaviour {
     [SerializeField]
     ParticleSystem firingParticle;
 
-    [SerializeField]
+    Transform firePoint;
+
     SpawnScript spawnScript;
 
     Rigidbody body;
@@ -16,6 +17,8 @@ public class TurretBehaviour : MonoBehaviour {
     private float nextFire;
 
     Quaternion storedRot;
+
+    LineRenderer line;
 
     public AudioSource turretShot;
 
@@ -26,9 +29,22 @@ public class TurretBehaviour : MonoBehaviour {
     private bool isAiming = false;
     private float fireRate = 1;
 
+    IEnumerator LineActive()
+    {
+        line.enabled = true;
+        yield return new WaitForSeconds(0.1f);
+        line.enabled = false;
+    }
+
     // Use this for initialization
     void Awake()
     {
+        line = this.gameObject.GetComponentInChildren<LineRenderer>();
+
+        firePoint = this.gameObject.GetComponentInChildren<LineRenderer>().transform;
+
+        spawnScript = GameObject.FindGameObjectWithTag("Spawn").GetComponent<SpawnScript>();
+
         body = GetComponent<Rigidbody>();
 
         if (body == null)
@@ -54,6 +70,7 @@ public class TurretBehaviour : MonoBehaviour {
         {
             body.rotation = Quaternion.Lerp(transform.rotation, storedRot, Time.deltaTime);
             isAiming = false;
+            line.enabled = false;
         }
 
         if (isAiming == true && Time.time > nextFire)
@@ -68,7 +85,9 @@ public class TurretBehaviour : MonoBehaviour {
         turretShot.Play();
         firingParticle.Play();
         target.GetComponent<AIScript>().enemy.Health--;
-
+        StartCoroutine(LineActive());
+        line.SetPosition(0, firePoint.position);
+        line.SetPosition(1, target.transform.localPosition);
     }
 
     private void LateUpdate()

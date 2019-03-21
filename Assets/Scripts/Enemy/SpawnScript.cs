@@ -21,7 +21,7 @@ public class SpawnScript : MonoBehaviour {
     [SerializeField]
     float timeOfNextSpawn = 1f;
 
-    List<AIScript> spawnedEnemies;
+    static List<AIScript> spawnedEnemies;
 
     public List<AIScript> SpawnedEnemies
     {

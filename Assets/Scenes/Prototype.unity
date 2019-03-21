@@ -991,6 +991,11 @@ Prefab:
       propertyPath: spawnScript
       value: 
       objectReference: {fileID: 1466246973}
+    - target: {fileID: 120189195807384232, guid: ef6ebe47c4ecd524d91f4ff17dc0c93c,
+        type: 2}
+      propertyPath: m_UseWorldSpace
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef6ebe47c4ecd524d91f4ff17dc0c93c, type: 2}
   m_IsPrefabAsset: 0
@@ -3391,11 +3396,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114743716090784838, guid: ef6ebe47c4ecd524d91f4ff17dc0c93c,
-        type: 2}
-      propertyPath: spawnScript
-      value: 
-      objectReference: {fileID: 1466246973}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef6ebe47c4ecd524d91f4ff17dc0c93c, type: 2}
   m_IsPrefabAsset: 0
@@ -4644,7 +4644,7 @@ GameObject:
   - component: {fileID: 1286353527}
   m_Layer: 0
   m_Name: Spawn
-  m_TagString: Untagged
+  m_TagString: Spawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5626,7 +5626,7 @@ GameObject:
   - component: {fileID: 1466246973}
   m_Layer: 0
   m_Name: Spawn
-  m_TagString: Untagged
+  m_TagString: Spawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6321,7 +6321,7 @@ GameObject:
   m_Layer: 0
   m_Name: Waypoint
   m_TagString: Waypoint
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

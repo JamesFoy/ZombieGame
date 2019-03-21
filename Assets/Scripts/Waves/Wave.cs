@@ -6,6 +6,6 @@ using UnityEngine;
 public class Wave : ScriptableObject {
 
     public int enemyCount;
-    public AIScript[] enemyTypes;
+    public List<AIScript> enemyTypes;
 
 }
