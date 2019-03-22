@@ -10,11 +10,24 @@ public class PlayerShooting : MonoBehaviour {
     [SerializeField]
     ParticleSystem firingParticle;
 
+    [SerializeField]
+    GameObject gunHolster;
+
+    [SerializeField]
+    GameObject granade;
+
     PlayerAnimations playerAnim;
+
+    LineRenderer shootLine;
 
     CharacterAudioManager Audio;
 
     PlayerMovement playerMove;
+
+    Vector3 endPoint;
+
+    [SerializeField]
+    Vector3 lineOffset;
 
     [SerializeField]
     Weapons weapons;
@@ -23,9 +36,13 @@ public class PlayerShooting : MonoBehaviour {
     private Transform shootT;
 
     [SerializeField]
+    Transform handPoint;
+
+    [SerializeField]
     public bool isShooting = false;
     public bool emptyGun = false;
     public bool reload = false;
+    public bool throwGranade = false;
 
     [SerializeField]
     private float fireRate;
@@ -42,15 +59,24 @@ public class PlayerShooting : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        shootLine = this.gameObject.GetComponentInChildren<LineRenderer>();
+        shootLine.enabled = false;
         playerControl = GetComponent<PlayerControl>();
         playerMove = GetComponent<PlayerMovement>();
         laserLine = GetComponentInChildren<LineRenderer>();
         Audio = GetComponent<CharacterAudioManager>();
         playerAnim = GetComponent<PlayerAnimations>();
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    IEnumerator LineActive()
+    {
+        shootLine.enabled = true;
+        yield return new WaitForSeconds(0.1f);
+        shootLine.enabled = false;
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
         if (playerControl.state.Triggers.Right == 1 && Time.time > nextFire && shotsDone < weapons.MaxShots)
         {
@@ -62,8 +88,15 @@ public class PlayerShooting : MonoBehaviour {
             firingParticle.Play();
 
             Vector3 fwd = shootT.transform.TransformDirection(Vector3.forward);
-            Debug.DrawRay(shootT.transform.position, fwd * 100, Color.green);
-            if (Physics.Raycast(shootT.transform.position, fwd, out Hit, 100, layer) && Hit.collider.tag == "Enemy")
+            Debug.DrawRay(shootT.transform.position, fwd * 40, Color.green);
+
+            endPoint = shootT.position + fwd * 40;
+            StartCoroutine(LineActive());
+            shootLine.SetPosition(0, shootT.position);
+            shootLine.SetPosition(1, endPoint + lineOffset);
+
+
+            if (Physics.Raycast(shootT.transform.position, fwd, out Hit, 40, layer) && Hit.collider.tag == "Enemy")
             {
                 Hit.collider.GetComponent<AIScript>().enemy.Health -= weapons.AkDamge;
             }
@@ -88,6 +121,17 @@ public class PlayerShooting : MonoBehaviour {
         else
         {
             reload = false;
+        }
+
+        if (playerControl.state.Buttons.RightShoulder == ButtonState.Pressed)
+        {
+            throwGranade = true;
+            gunHolster.SetActive(false);
+            Instantiate(granade, handPoint.position, Quaternion.identity);
+        }
+        else
+        {
+            throwGranade = false;
         }
     }
 }

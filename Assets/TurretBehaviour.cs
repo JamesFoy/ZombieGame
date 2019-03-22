@@ -20,6 +20,9 @@ public class TurretBehaviour : MonoBehaviour {
 
     LineRenderer line;
 
+    [SerializeField]
+    Vector3 bodyOffset;
+
     public AudioSource turretShot;
 
     float strength = 1f;
@@ -87,7 +90,7 @@ public class TurretBehaviour : MonoBehaviour {
         target.GetComponent<AIScript>().enemy.Health--;
         StartCoroutine(LineActive());
         line.SetPosition(0, firePoint.position);
-        line.SetPosition(1, target.transform.localPosition);
+        line.SetPosition(1, target.transform.localPosition + bodyOffset);
     }
 
     private void LateUpdate()

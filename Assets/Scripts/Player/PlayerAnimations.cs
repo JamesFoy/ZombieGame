@@ -56,6 +56,7 @@ public class PlayerAnimations : MonoBehaviour {
         anim.SetBool("TwoHanded", TwoHanded);
         anim.SetBool("Running", isRunning);
         anim.SetBool("IsMoving", playerMove.moving);
+        anim.SetBool("ThrowGranade", playerShot.throwGranade);
     }
 
     public void ReloadingGun()

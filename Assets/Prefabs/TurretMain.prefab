@@ -507,6 +507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firingParticle: {fileID: 198306467961995534}
+  bodyOffset: {x: 0, y: 1, z: 0}
   turretShot: {fileID: 82804283903830734}
 --- !u!120 &120189195807384232
 LineRenderer:

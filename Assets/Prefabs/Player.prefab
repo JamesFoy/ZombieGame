@@ -2348,7 +2348,7 @@ Transform:
   m_Children:
   - {fileID: 4428450555091056}
   m_Father: {fileID: 4535340820175216}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4437825015280020
 Transform:
@@ -2525,9 +2525,9 @@ Transform:
   m_Children:
   - {fileID: 4021741035396298}
   - {fileID: 4089160029457842}
-  - {fileID: 4429286009033078}
-  - {fileID: 4991446534962150}
   - {fileID: 4657927076949184}
+  - {fileID: 4991446534962150}
+  - {fileID: 4429286009033078}
   m_Father: {fileID: 4399519854723964}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2762,7 +2762,7 @@ Transform:
   m_Children:
   - {fileID: 4876110495272048}
   m_Father: {fileID: 4535340820175216}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4665979538247314
 Transform:
@@ -4429,7 +4429,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1043964555887558}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b919347a1f209ce4fa3dd91c0b3e58cd, type: 3}
   m_Name: 
@@ -4451,8 +4451,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   speed: 11
-  aimSpeed: 11
-  offset: 1
   h: 0
   v: 0
   aiming: 0
@@ -4593,6 +4591,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firingParticle: {fileID: 198478598204719482}
+  gunHolster: {fileID: 1907615849507448}
+  granade: {fileID: 1355266504940174, guid: b0a1680aef0b86244ba4b152b91a81cc, type: 2}
   weapons:
     akDamage: 1
     maxShots: 30
@@ -4600,6 +4600,7 @@ MonoBehaviour:
   isShooting: 0
   emptyGun: 0
   reload: 0
+  throwGranade: 0
   fireRate: 0.2
   shotsDone: 0
   layer:
@@ -8695,7 +8696,7 @@ ParticleSystem:
       properties: 0
   LightsModule:
     enabled: 0
-    ratio: 0
+    ratio: 1
     light: {fileID: 0}
     randomDistribution: 1
     color: 1
