@@ -67,12 +67,6 @@
     <Compile Include="Assets\Allegorithmic\Plugins\Substance\Livelink\Editor\Scripts\MaterialsManipulation.cs" />
     <Compile Include="Assets\Allegorithmic\Plugins\Substance\Livelink\Editor\Scripts\MeshLinkEditor.cs" />
     <Compile Include="Assets\Allegorithmic\Plugins\Substance\Livelink\Editor\Scripts\ShadersInfos.cs" />
-    <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>D:/VirginTrains/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>D:/VirginTrains/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/VirginTrains/GitHub/ZombieGame/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
@@ -82,23 +76,29 @@
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>D:/VirginTrains/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
-      <HintPath>D:/VirginTrains/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
       <HintPath>D:/VirginTrains/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
       <HintPath>D:/VirginTrains/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>D:/VirginTrains/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>D:/VirginTrains/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>D:/VirginTrains/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
+      <HintPath>D:/VirginTrains/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
       <HintPath>D:/VirginTrains/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.HighDefinition.Editor">
       <HintPath>D:/VirginTrains/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/VirginTrains/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.IncludePaths">
       <HintPath>D:/VirginTrains/GitHub/ZombieGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.IncludePaths.dll</HintPath>

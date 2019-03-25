@@ -8,6 +8,7 @@ TagManager:
   - Waypoint
   - UI
   - Spawn
+  - Purchaseable
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - PostProcessing
   - Player
   - Defences
-  - 
+  - Grenade
   - 
   - 
   - 

@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4244435094403922}
   - component: {fileID: 33874745385473734}
   - component: {fileID: 23472144498657540}
-  m_Layer: 0
+  - component: {fileID: 136145138145418486}
+  m_Layer: 11
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +38,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4042536504294512}
   - component: {fileID: 54575439318549142}
-  m_Layer: 0
+  - component: {fileID: 114582835062702364}
+  m_Layer: 11
   m_Name: Granade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +56,7 @@ GameObject:
   - component: {fileID: 4338779400349112}
   - component: {fileID: 33903545231472244}
   - component: {fileID: 23443621646919942}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Grip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1355266504940174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5495, y: 0.798, z: -6.703681}
+  m_LocalPosition: {x: 3.5495, y: 0.831, z: -6.703681}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4244435094403922}
@@ -195,9 +197,39 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114582835062702364
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1355266504940174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff8dcf8fbdec85942bf3cc2f336dd17a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 3
+  explosionDamage: 10
+  explosionEffect: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3,
+    type: 2}
+  explosionForce: 700
+  radius: 5
+--- !u!136 &136145138145418486
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006273025312632}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.069107264
+  m_Height: 0.12700003
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0.0056072487}

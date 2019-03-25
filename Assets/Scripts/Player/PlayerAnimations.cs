@@ -27,6 +27,15 @@ public class PlayerAnimations : MonoBehaviour {
     private GameObject mag2;
 
     [SerializeField]
+    GameObject granade;
+
+    [SerializeField]
+    float throwForce;
+
+    [SerializeField]
+    Transform handPoint;
+
+    [SerializeField]
     private Transform magSpawn;
     public bool isRunning;
 
@@ -93,5 +102,12 @@ public class PlayerAnimations : MonoBehaviour {
     public void IkOn()
     {
         handIk.ikActive = true;
+    }
+
+    private void ThrowGrenade()
+    {
+        Instantiate(granade, handPoint.position, handPoint.rotation);
+        Rigidbody rb = granade.GetComponent<Rigidbody>();
+        rb.AddForce(transform.forward * throwForce, ForceMode.VelocityChange);
     }
 }

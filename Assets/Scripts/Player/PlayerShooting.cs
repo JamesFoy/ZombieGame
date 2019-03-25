@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using XInputDotNetPure;
@@ -9,12 +10,6 @@ public class PlayerShooting : MonoBehaviour {
 
     [SerializeField]
     ParticleSystem firingParticle;
-
-    [SerializeField]
-    GameObject gunHolster;
-
-    [SerializeField]
-    GameObject granade;
 
     PlayerAnimations playerAnim;
 
@@ -35,8 +30,6 @@ public class PlayerShooting : MonoBehaviour {
     [SerializeField]
     private Transform shootT;
 
-    [SerializeField]
-    Transform handPoint;
 
     [SerializeField]
     public bool isShooting = false;
@@ -75,8 +68,15 @@ public class PlayerShooting : MonoBehaviour {
         shootLine.enabled = false;
     }
 
+    IEnumerator GrenadeCanThrow()
+    {
+        throwGranade = true;
+        yield return new WaitForSeconds(10);
+        throwGranade = false;
+    }
+
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
         if (playerControl.state.Triggers.Right == 1 && Time.time > nextFire && shotsDone < weapons.MaxShots)
         {
@@ -125,13 +125,7 @@ public class PlayerShooting : MonoBehaviour {
 
         if (playerControl.state.Buttons.RightShoulder == ButtonState.Pressed)
         {
-            throwGranade = true;
-            gunHolster.SetActive(false);
-            Instantiate(granade, handPoint.position, Quaternion.identity);
-        }
-        else
-        {
-            throwGranade = false;
+            GrenadeCanThrow();
         }
     }
 }
