@@ -48,6 +48,10 @@ public class PlayerShooting : MonoBehaviour {
 
     [SerializeField]
     LayerMask layer;
+    private float nextThrow;
+    [SerializeField]
+    private float throwRate;
+    public int grenadesThrown;
 
     // Use this for initialization
     void Start ()
@@ -66,13 +70,6 @@ public class PlayerShooting : MonoBehaviour {
         shootLine.enabled = true;
         yield return new WaitForSeconds(0.1f);
         shootLine.enabled = false;
-    }
-
-    IEnumerator GrenadeCanThrow()
-    {
-        throwGranade = true;
-        yield return new WaitForSeconds(10);
-        throwGranade = false;
     }
 
     // Update is called once per frame
@@ -123,9 +120,15 @@ public class PlayerShooting : MonoBehaviour {
             reload = false;
         }
 
-        if (playerControl.state.Buttons.RightShoulder == ButtonState.Pressed)
+        if (playerControl.state.Buttons.RightShoulder == ButtonState.Pressed && Time.time > nextThrow && grenadesThrown < weapons.MaxGrenades)
         {
-            GrenadeCanThrow();
+            nextThrow = Time.time + throwRate;
+            throwGranade = true;
+            grenadesThrown++;
+        }
+        else
+        {
+            throwGranade = false;
         }
     }
 }

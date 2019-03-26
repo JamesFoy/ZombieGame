@@ -7,6 +7,9 @@ using System;
 public class Weapons
 {
     [SerializeField]
+    private int maxGrenades = 3;
+
+    [SerializeField]
     private int akDamage;
 
     [SerializeField]
@@ -25,6 +28,14 @@ public class Weapons
         get
         {
             return maxShots;
+        }
+    }
+
+    public int MaxGrenades
+    {
+        get
+        {
+            return maxGrenades;
         }
     }
 }

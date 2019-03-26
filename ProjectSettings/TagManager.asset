@@ -9,6 +9,7 @@ TagManager:
   - UI
   - Spawn
   - Purchaseable
+  - Church
   layers:
   - Default
   - TransparentFX

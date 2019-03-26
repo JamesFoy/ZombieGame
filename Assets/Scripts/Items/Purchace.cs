@@ -8,6 +8,8 @@ public class Purchace : MonoBehaviour {
 
     public int price;
 
+    private bool beenPurchased = false;
+
     UIScript uiScript;
 
     PlayerControl playerControl;
@@ -27,9 +29,12 @@ public class Purchace : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            uiScript.DisplayPopup();
+            if (beenPurchased == false)
+            {
+                uiScript.DisplayPopup();
+            }
 
-            if (uiScript.score >= price && playerControl.state.Buttons.A == ButtonState.Pressed)
+            if (uiScript.score >= price && playerControl.state.Buttons.A == ButtonState.Pressed && beenPurchased == false)
             {
                 Purchase();
             }
@@ -49,5 +54,6 @@ public class Purchace : MonoBehaviour {
         uiScript.purchaseSound.Play();
         turretBehaviour.enabled = true;
         uiScript.score -= price;
+        beenPurchased = true;
     }
 }

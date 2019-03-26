@@ -91,6 +91,11 @@ public class AIScript : MonoBehaviour {
         }
     }
 
+    public void DiePlease()
+    {
+        enemy.Health = 0;
+    }
+
     private void RunCombatState()
     {
         isMoving = true;

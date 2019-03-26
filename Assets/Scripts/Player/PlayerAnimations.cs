@@ -106,8 +106,8 @@ public class PlayerAnimations : MonoBehaviour {
 
     private void ThrowGrenade()
     {
-        Instantiate(granade, handPoint.position, handPoint.rotation);
-        Rigidbody rb = granade.GetComponent<Rigidbody>();
+        GameObject grenade = Instantiate(granade, handPoint.position, handPoint.rotation);
+        Rigidbody rb = grenade.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * throwForce, ForceMode.VelocityChange);
     }
 }

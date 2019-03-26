@@ -12,6 +12,9 @@ public class UIScript : MonoBehaviour
     Purchace purchace;
 
     [SerializeField]
+    Church churchInfo;
+
+    [SerializeField]
     Weapons weapon;
 
     [SerializeField]
@@ -21,10 +24,16 @@ public class UIScript : MonoBehaviour
     public TMP_Text moneyText;
 
     [SerializeField]
+    public TMP_Text churchHealth;
+
+    [SerializeField]
     public TMP_Text priceInfo;
 
     [SerializeField]
     public TMP_Text ammoText;
+
+    [SerializeField]
+    public TMP_Text grenadeText;
 
     public AudioSource purchaseSound;
 
@@ -34,15 +43,16 @@ public class UIScript : MonoBehaviour
     void Start()
     {
         purchace = GameObject.FindGameObjectWithTag("Purchaseable").GetComponent<Purchace>();
-        popup.SetActive(false);
-        priceInfo.enabled = false;
+        HideDisplayPopup();
         score = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        churchHealth.text = "Church Health: " + churchInfo.churchHealth;
         moneyText.text = "£: " + score;
+        grenadeText.text = " " + (weapon.MaxGrenades - playerShoot.grenadesThrown);
         ammoText.text = " " + (weapon.MaxShots - playerShoot.shotsDone);
     }
 
