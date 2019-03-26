@@ -5,23 +5,19 @@ using UnityEngine.Events;
 
 public class Events : MonoBehaviour {
 
-    [SerializeField]
-    public Wave wave;
-
-    [SerializeField]
-    UnityEvent nextwave;
-
-    private void Update()
+    private void OnEnable()
     {
-        if (wave.enemyCount == 0)
-        {
-            Debug.Log("Go to next event");
-            NextWave();
-        }
+        EventManager.StartListening("CurrentWave", CurrentWave);
+        EventManager.StartListening("NextWave", NextWave);
+    }
+
+    void CurrentWave()
+    {
+
     }
 
     void NextWave()
     {
-        nextwave.Invoke();
+
     }
 }

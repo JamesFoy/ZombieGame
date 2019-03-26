@@ -44,6 +44,12 @@ public class SpawnScript : MonoBehaviour {
             enemyspawn = enemy;
         }
 
+        if (spawnCount == 0)
+        {
+            Debug.Log("NextWave");
+            EventManager.TriggerEvent("NextWave");
+        }
+
         if (Time.time >= timeOfNextSpawn && wave.enemyCount > spawnCount)
         {
             var enemySpawned = Instantiate(enemyspawn, transform.position, Quaternion.identity, spawnPoint);
