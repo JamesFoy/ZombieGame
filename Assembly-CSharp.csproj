@@ -73,6 +73,8 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStats.cs" />
     <Compile Include="Assets\Scripts\Enemy\SpawnScript.cs" />
+    <Compile Include="Assets\Scripts\Events\EventManager.cs" />
+    <Compile Include="Assets\Scripts\Events\Events.cs" />
     <Compile Include="Assets\Scripts\HandPlacementIK.cs" />
     <Compile Include="Assets\Scripts\Items\Church.cs" />
     <Compile Include="Assets\Scripts\Items\Grenade.cs" />

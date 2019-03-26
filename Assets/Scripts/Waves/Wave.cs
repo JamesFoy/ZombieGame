@@ -7,5 +7,6 @@ public class Wave : ScriptableObject {
 
     public int enemyCount;
     public List<AIScript> enemyTypes;
+    public int waveNumber;
 
 }
