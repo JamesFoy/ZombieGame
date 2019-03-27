@@ -10,7 +10,7 @@ public class TurretBehaviour : MonoBehaviour {
 
     Transform firePoint;
 
-    SpawnScript spawnScript;
+    WaveSpawner spawnScript;
 
     Rigidbody body;
 
@@ -46,7 +46,7 @@ public class TurretBehaviour : MonoBehaviour {
 
         firePoint = this.gameObject.GetComponentInChildren<LineRenderer>().transform;
 
-        spawnScript = GameObject.FindGameObjectWithTag("Spawn").GetComponent<SpawnScript>();
+        spawnScript = GameObject.FindObjectOfType<WaveSpawner>();
 
         body = GetComponent<Rigidbody>();
 

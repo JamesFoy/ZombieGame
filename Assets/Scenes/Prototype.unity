@@ -4726,7 +4726,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1286353526}
-  - component: {fileID: 1286353527}
   m_Layer: 0
   m_Name: Spawn
   m_TagString: Spawn
@@ -4747,21 +4746,6 @@ Transform:
   m_Father: {fileID: 1586917373}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1286353527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1286353525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cab77ec0e0015447ad20149825f463f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 1822407955}
-  wave: {fileID: 11400000, guid: 379664e41382a954ebcf28dea15527e8, type: 2}
-  delayBetweenSpawns: 2
-  timeOfNextSpawn: 1
 --- !u!1 &1287798566
 GameObject:
   m_ObjectHideFlags: 3
@@ -5568,7 +5552,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1466246972}
-  - component: {fileID: 1466246973}
   m_Layer: 0
   m_Name: Spawn
   m_TagString: Spawn
@@ -5589,21 +5572,6 @@ Transform:
   m_Father: {fileID: 1586917373}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1466246973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1466246971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cab77ec0e0015447ad20149825f463f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 1822407955}
-  wave: {fileID: 11400000, guid: 379664e41382a954ebcf28dea15527e8, type: 2}
-  delayBetweenSpawns: 2
-  timeOfNextSpawn: 1
 --- !u!1001 &1522370112
 Prefab:
   m_ObjectHideFlags: 0
@@ -5951,6 +5919,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1586917373}
+  - component: {fileID: 1586917374}
   m_Layer: 0
   m_Name: Spawns
   m_TagString: Untagged
@@ -5973,6 +5942,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1586917374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1586917372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21fffff6529f9ab4e98bfc0195374522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - name: First Wave
+    enemy: {fileID: 114200220224704460, guid: 58d59a87ecfe83c40a9f39a0e67b07b8, type: 2}
+    amount: 5
+    rate: 1
+  - name: Second Wave
+    enemy: {fileID: 114200220224704460, guid: 58d59a87ecfe83c40a9f39a0e67b07b8, type: 2}
+    amount: 10
+    rate: 1
+  - name: Third Wave
+    enemy: {fileID: 114200220224704460, guid: 58d59a87ecfe83c40a9f39a0e67b07b8, type: 2}
+    amount: 15
+    rate: 2
+  - name: Fourth Wave
+    enemy: {fileID: 114200220224704460, guid: b882f895db7f4a242988e7a148fde4c7, type: 2}
+    amount: 5
+    rate: 1
+  - name: Fith Wave
+    enemy: {fileID: 114200220224704460, guid: b882f895db7f4a242988e7a148fde4c7, type: 2}
+    amount: 10
+    rate: 1
+  spawnPoints:
+  - {fileID: 1466246972}
+  - {fileID: 1286353526}
+  timeBetweenWaves: 5
+  waveCountDown: 0
 --- !u!1001 &1627532319
 Prefab:
   m_ObjectHideFlags: 0
