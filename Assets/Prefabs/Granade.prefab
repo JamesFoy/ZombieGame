@@ -220,6 +220,7 @@ MonoBehaviour:
     type: 2}
   explosionForce: 700
   radius: 5
+  explosionSound: {fileID: 8300000, guid: 4d410674a4c9aa14fb172156f90ea71c, type: 3}
 --- !u!136 &136145138145418486
 CapsuleCollider:
   m_ObjectHideFlags: 1

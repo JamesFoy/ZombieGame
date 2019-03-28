@@ -20,6 +20,8 @@ public class Grenade : MonoBehaviour {
     [SerializeField]
     float radius = 5f;
 
+    public AudioClip explosionSound;
+
     float countDown;
 
     bool hasExploded = false;
@@ -44,8 +46,9 @@ public class Grenade : MonoBehaviour {
 
     private void Explode()
     {
-        //Show Explosion Effect;
         GameObject explosion = Instantiate(explosionEffect, transform.position, transform.rotation);
+
+        AudioSource.PlayClipAtPoint(explosionSound, transform.position);
 
         //Get nearby objects and add force and destory/kill
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
@@ -56,7 +59,7 @@ public class Grenade : MonoBehaviour {
 
             if (rb != null)
             {
-                rb.AddExplosionForce(explosionForce, transform.position, radius);
+                //rb.AddExplosionForce(explosionForce, transform.position, radius);
             }
 
             if (nearbyObject.CompareTag("Enemy"))
