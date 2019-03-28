@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour {
 
+    [SerializeField]
+    UIScript uiScript;
+
     public enum SpawnState { SPAWNING, WAITING, COUNTING };
 
     [System.Serializable]
@@ -27,8 +30,11 @@ public class WaveSpawner : MonoBehaviour {
 
     //Time between each wave
     public float timeBetweenWaves = 5f;
+
     [SerializeField]
     private float waveCountDown;
+
+    public string waveName;
 
     private float searchCountDown = 1f;
 
@@ -105,6 +111,7 @@ public class WaveSpawner : MonoBehaviour {
         }
         else
         {
+            uiScript.WaveInfo();
             nextWave++;
         }
     }
@@ -127,6 +134,8 @@ public class WaveSpawner : MonoBehaviour {
     IEnumerator SpawnWave(Wave _wave)
     {
         Debug.Log("Spawning wave: " + _wave.name);
+
+        waveName = _wave.name;
 
         state = SpawnState.SPAWNING;
 

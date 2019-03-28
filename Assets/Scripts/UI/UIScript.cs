@@ -21,6 +21,9 @@ public class UIScript : MonoBehaviour
     GameObject popup;
 
     [SerializeField]
+    WaveSpawner wave;
+
+    [SerializeField]
     public TMP_Text moneyText;
 
     [SerializeField]
@@ -35,6 +38,9 @@ public class UIScript : MonoBehaviour
     [SerializeField]
     public TMP_Text grenadeText;
 
+    [SerializeField]
+    public TMP_Text waveInfo;
+
     public AudioSource purchaseSound;
 
     public int score;
@@ -45,11 +51,13 @@ public class UIScript : MonoBehaviour
         purchace = GameObject.FindGameObjectWithTag("Purchaseable").GetComponent<Purchace>();
         HideDisplayPopup();
         score = 0;
+        waveInfo.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        waveInfo.text = "Wave " + wave.waveName + " Completed!!";
         churchHealth.text = "Church Health: " + churchInfo.churchHealth;
         moneyText.text = "£: " + score;
         grenadeText.text = " " + (weapon.MaxGrenades - playerShoot.grenadesThrown);
@@ -71,5 +79,17 @@ public class UIScript : MonoBehaviour
 
         priceInfo.enabled = true;
         priceInfo.text = "This item costs £" + purchace.price + "," + " You currently have: £" + score + "." + " Do you wish to purchase this item?";
+    }
+
+    IEnumerator DisplayWave()
+    {
+        waveInfo.enabled = true;
+        yield return new WaitForSeconds(5f);
+        waveInfo.enabled = false;
+    }
+
+    public void WaveInfo()
+    {
+        StartCoroutine(DisplayWave());
     }
 }
