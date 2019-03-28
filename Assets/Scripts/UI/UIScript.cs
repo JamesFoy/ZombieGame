@@ -42,6 +42,7 @@ public class UIScript : MonoBehaviour
     public TMP_Text waveInfo;
 
     public AudioSource purchaseSound;
+    public AudioSource waveCompleteSound;
 
     public int score;
 
@@ -90,6 +91,7 @@ public class UIScript : MonoBehaviour
 
     public void WaveInfo()
     {
+        waveCompleteSound.Play();
         StartCoroutine(DisplayWave());
     }
 }
