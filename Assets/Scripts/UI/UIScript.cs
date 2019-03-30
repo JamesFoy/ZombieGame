@@ -65,12 +65,14 @@ public class UIScript : MonoBehaviour
         ammoText.text = " " + (weapon.MaxShots - playerShoot.shotsDone);
     }
 
+    //This method is used to hide the purchasing popup
     public void HideDisplayPopup()
     {
         popup.SetActive(false);
         priceInfo.enabled = false;
     }
 
+    //This method is used to display the purchasing popup
     public void DisplayPopup()
     {
         if (score >= purchace.price)
@@ -82,6 +84,7 @@ public class UIScript : MonoBehaviour
         priceInfo.text = "This item costs £" + purchace.price + "," + " You currently have: £" + score + "." + " Do you wish to purchase this item?";
     }
 
+    //This will display the wave info for a certain amount of time
     IEnumerator DisplayWave()
     {
         waveInfo.enabled = true;
@@ -89,6 +92,7 @@ public class UIScript : MonoBehaviour
         waveInfo.enabled = false;
     }
 
+    //This will be used to display the WaveInformation
     public void WaveInfo()
     {
         waveCompleteSound.Play();

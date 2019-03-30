@@ -56,6 +56,7 @@ public class PlayerAnimations : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        //Setting all animations to the parameters
         anim.SetFloat("Horizontal", playerMove.h);
         anim.SetFloat("Vertical", playerMove.v);
         anim.SetBool("isShooting", playerShot.isShooting);
@@ -68,6 +69,7 @@ public class PlayerAnimations : MonoBehaviour {
         anim.SetBool("ThrowGranade", playerShot.throwGranade);
     }
 
+    //Method use for reloading
     public void ReloadingGun()
     {
         if (playerShot.reload == true)
@@ -83,6 +85,7 @@ public class PlayerAnimations : MonoBehaviour {
         }
     }
 
+    //These methods are used for animation events
     public void MagOff()
     {
         Instantiate(mag2, magSpawn);
