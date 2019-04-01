@@ -72,8 +72,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4995264585488280}
   - component: {fileID: 114743716090784838}
-  - component: {fileID: 65849561864490594}
   - component: {fileID: 82804283903830734}
+  - component: {fileID: 65849561864490594}
   - component: {fileID: 54647219459798280}
   m_Layer: 10
   m_Name: TurretMain
