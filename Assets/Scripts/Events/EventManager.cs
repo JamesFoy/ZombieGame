@@ -13,8 +13,10 @@ public class EventManager : MonoBehaviour {
         {
             if (!eventManager)
             {
+                //If there isnt a reference added find it
                 eventManager = FindObjectOfType(typeof(EventManager)) as EventManager;
 
+                // If there is no event manager attached to a game object and no reference can be found
                 if (!eventManager)
                 {
                     Debug.LogError("There needs to be one active EventManager script on a GameObject in your scene");
@@ -30,6 +32,7 @@ public class EventManager : MonoBehaviour {
         }
     }
 
+    //Initialize the event dictonary
     void Init()
     {
         if (eventDictionary == null)

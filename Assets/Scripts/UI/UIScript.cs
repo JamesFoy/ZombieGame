@@ -55,10 +55,25 @@ public class UIScript : MonoBehaviour
         waveInfo.enabled = false;
     }
 
+    void OnEnable()
+    {
+        EventManager.StartListening("WaveText", UpdateWaveInfo);
+    }
+
+    void OnDisable()
+    {
+        EventManager.StartListening("WaveText", UpdateWaveInfo);
+    }
+
+    public void UpdateWaveInfo()
+    {
+        WaveInfo();
+        waveInfo.text = "Wave " + wave.waveName + " Completed!!";
+    }
+
     // Update is called once per frame
     void Update()
     {
-        waveInfo.text = "Wave " + wave.waveName + " Completed!!";
         churchHealth.text = "Church Health: " + churchInfo.churchHealth;
         moneyText.text = "£: " + score;
         grenadeText.text = " " + (weapon.MaxGrenades - playerShoot.grenadesThrown);

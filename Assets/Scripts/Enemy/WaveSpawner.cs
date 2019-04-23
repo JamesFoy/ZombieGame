@@ -111,7 +111,7 @@ public class WaveSpawner : MonoBehaviour {
         }
         else
         {
-            uiScript.WaveInfo();
+            EventManager.TriggerEvent("WaveText");
             nextWave++;
         }
     }
