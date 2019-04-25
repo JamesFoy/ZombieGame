@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EventTriggers : MonoBehaviour {
+//Author - James Foy
+//This script was used as a test to make sure that the evenet system was working
 
-	// Use this for initialization
-	void Start ()
-    {
-		
-	}
+public class EventTriggers : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update ()

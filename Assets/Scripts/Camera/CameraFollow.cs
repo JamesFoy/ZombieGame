@@ -2,6 +2,9 @@
 using UnityEngine.UI;
 using XInputDotNetPure;
 
+//Author - James Foy
+//This script was use to help the camera follow the players character. It also helps with controlling aiming
+
 public class CameraFollow : MonoBehaviour {
 
     [SerializeField]
@@ -38,6 +41,8 @@ public class CameraFollow : MonoBehaviour {
 
     GamePadState state;
 
+
+    //Used to help other scripts know if the player is aiming
     public bool IsAiming
     {
         get
@@ -46,6 +51,7 @@ public class CameraFollow : MonoBehaviour {
         }
     }
 
+    //this is used to help correctly position the camera when the game starts
     private void OnEnable()
     {
         crossHair.enabled = false;
@@ -106,6 +112,7 @@ public class CameraFollow : MonoBehaviour {
         transform.position = Vector3.MoveTowards(transform.position, target.position, step);
     }
 
+    //These methods are used to run different behaviour when aiming or not aiming
     void Aiming()
     {
         crossHair.enabled = true;

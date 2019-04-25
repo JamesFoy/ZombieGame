@@ -5,6 +5,10 @@ using UnityEngine.AI;
 using UnityEngine.Playables;
 using Cinemachine;
 
+//Author - James Foy
+//This script was used to help make sure that the correct compenets were active and the correct settings were set 
+//when the cutscenes would start and end
+
 public class CutsceneBehaviour : MonoBehaviour {
 
     [SerializeField]

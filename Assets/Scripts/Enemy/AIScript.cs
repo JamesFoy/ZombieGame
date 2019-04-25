@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+//Author - James Foy, Simon Hunt
+//This script was used by the enemies in the game to correctly track the states that the enemies could be in
+//THis would contain tracks like patroling, combat and if they are dead. This also updates some UI and varibales on other scripts
+
 public class AIScript : MonoBehaviour {
 
     public event Action<AIScript> HaveDied;
@@ -31,6 +35,8 @@ public class AIScript : MonoBehaviour {
     public enum Behaviours { Patrol, Combat, Dead };
     public Behaviours currBehaviour = Behaviours.Patrol;
 
+
+    //This is used to set the correct componets to certain variables so they can be used later
     void Start()
     {
         uiScript = GameObject.FindGameObjectWithTag("UI").GetComponent<UIScript>();
@@ -40,10 +46,13 @@ public class AIScript : MonoBehaviour {
         points = GameObject.FindGameObjectsWithTag("Waypoint");
     }
 
+    //This update function is used to run the different states during the game
     void Update()
     {
+        //This is calling the method that starts the behaviours
         RunBehaviours();
 
+        //Setting the animation controller to the booleans in script
         anim.SetBool("isMoving", isMoving);
         anim.SetBool("isDead", isDead);
 
@@ -62,6 +71,8 @@ public class AIScript : MonoBehaviour {
         }
     }
 
+    //This runs all of the different behaviours that the enemy can be in, this is also constantly run and the enemy
+    //is able to change the state at any time
     void RunBehaviours()
     {
         switch (currBehaviour)
@@ -78,6 +89,7 @@ public class AIScript : MonoBehaviour {
         }
     }
 
+    //This controls the behaviours that will happen when the enemy state is dead
     void RunDeadState()
     {
         if (isDead == true)
@@ -91,11 +103,13 @@ public class AIScript : MonoBehaviour {
         }
     }
 
+    //This is used to make sure that enemies die in other scripts with a simple function
     public void DiePlease()
     {
         enemy.Health = 0;
     }
 
+    //This controls all of the behaviour that will run when the enemies is in the combat state
     private void RunCombatState()
     {
         isMoving = true;
@@ -109,6 +123,7 @@ public class AIScript : MonoBehaviour {
         }
     }
 
+    //This controls all of the behaviour that will run when the enemies is in the patrol state
     private void RunPatrolState()
     {
         isMoving = true;

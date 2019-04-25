@@ -3,7 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Author - James Foy, Simon Hunt
+//This script is used to create a event manager system for the project
+
 public class EventManager : MonoBehaviour {
+
+    //This is creating the dictionary that is used to hold all of the references to events
     private Dictionary<string, Action> eventDictionary;
     private static EventManager eventManager;
 
@@ -74,6 +79,7 @@ public class EventManager : MonoBehaviour {
         }
     }
 
+    //This method is used to trigger an event
     public static void TriggerEvent(string eventName)
     {
         Action thisEvent = null;

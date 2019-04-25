@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Author - James Foy
+//This script is used to allow the enemies to damage the player when they are within a certain collider
+
 public class EnemyAttack : MonoBehaviour {
 
     [SerializeField]

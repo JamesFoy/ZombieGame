@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+//Author - James Foy
+//This script is used to give the enemies specific stats like health
+
 [Serializable]
 public class EnemyStats
 {
