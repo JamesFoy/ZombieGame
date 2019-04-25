@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Author - James Foy
+//This script is used to control all of the behaviour for the turrets. This script will be used to fine specific 
+//targets for the turrets and will also allow the target to shot and damage the target
+
 public class TurretBehaviour : MonoBehaviour {
 
     [SerializeField]
@@ -32,6 +36,7 @@ public class TurretBehaviour : MonoBehaviour {
     private bool isAiming = false;
     private float fireRate = 1;
 
+    //Used to display in game line of bullet from the turret to the enemy
     IEnumerator LineActive()
     {
         line.enabled = true;
@@ -39,7 +44,7 @@ public class TurretBehaviour : MonoBehaviour {
         line.enabled = false;
     }
 
-    // Use this for initialization
+    // Use this for initialization. Sets up references to components
     void Awake()
     {
         line = this.gameObject.GetComponentInChildren<LineRenderer>();
@@ -59,6 +64,7 @@ public class TurretBehaviour : MonoBehaviour {
         storedRot = body.rotation;
     }
 
+    //Finds the closest target with a collider
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
@@ -67,6 +73,7 @@ public class TurretBehaviour : MonoBehaviour {
         }
     }
 
+    //Makes the turret reset itself if not aiming
     private void Update()
     {
         if (target == null)
@@ -76,12 +83,15 @@ public class TurretBehaviour : MonoBehaviour {
             line.enabled = false;
         }
 
+        //Makes the turret shoot if it is aiming
         if (isAiming == true && Time.time > nextFire)
         {
             Shoot();
-        } 
+        }
     }
 
+    //Mehtod used for the behaviour when the turret shoots. This will play a sound, particle effect will spawn, and the in game 
+    //line will spawn
     private void Shoot()
     {
         nextFire = Time.time + fireRate;
@@ -93,11 +103,13 @@ public class TurretBehaviour : MonoBehaviour {
         line.SetPosition(1, target.transform.localPosition + bodyOffset);
     }
 
+    //Makes the turret aim
     private void LateUpdate()
     {
         Aim();
     }
 
+    //Mehtod used to control what the turret does while aiming
     void Aim ()
     {
         if (target)
@@ -117,6 +129,7 @@ public class TurretBehaviour : MonoBehaviour {
         }
     }
 
+    //Methods used for finding the closest target
     private Transform FindClosestTarget()
     {
         isAiming = true;
@@ -149,6 +162,8 @@ public class TurretBehaviour : MonoBehaviour {
             }
 
         }
+
+        //returns the closest enemy
         if (enemies.Count > 0)
         {
             return closest.transform;

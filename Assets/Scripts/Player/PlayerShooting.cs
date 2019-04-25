@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using XInputDotNetPure;
 
+//Author - James Foy
+//This script is used to control all of the behaviour when the player shoots
+
 public class PlayerShooting : MonoBehaviour {
 
     PlayerControl playerControl;
@@ -53,7 +56,7 @@ public class PlayerShooting : MonoBehaviour {
     private float throwRate;
     public int grenadesThrown;
 
-    // Use this for initialization
+    // Use this for initialization. Setting up references to components
     void Start ()
     {
         shootLine = this.gameObject.GetComponentInChildren<LineRenderer>();
@@ -65,6 +68,7 @@ public class PlayerShooting : MonoBehaviour {
         playerAnim = GetComponent<PlayerAnimations>();
     }
 
+    //This displays the in game line
     IEnumerator LineActive()
     {
         shootLine.enabled = true;
@@ -75,8 +79,11 @@ public class PlayerShooting : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        //This makes the player shot when pulling the right trigger. Also controls the behaviour when shooting.
         if (playerControl.state.Triggers.Right == 1 && Time.time > nextFire && shotsDone < weapons.MaxShots)
         {
+            //All behaviour when the player shoots. Makes the sure there is a delay between each shot.
+            //spawns the raycast to allow the player to shoot something
             nextFire = Time.time + fireRate;
             isShooting = true;
             shotsDone++;
@@ -92,7 +99,7 @@ public class PlayerShooting : MonoBehaviour {
             shootLine.SetPosition(0, shootT.position);
             shootLine.SetPosition(1, endPoint + lineOffset);
 
-
+            //Checks what the raycast hits and if it was an enemy damage it.
             if (Physics.Raycast(shootT.transform.position, fwd, out Hit, 40, layer) && Hit.collider.tag == "Enemy")
             {
                 Hit.collider.GetComponent<AIScript>().enemy.Health -= weapons.AkDamge;
@@ -103,6 +110,7 @@ public class PlayerShooting : MonoBehaviour {
             isShooting = false;
         }
 
+        //If the weapon has no ammo play sound effect
         if (playerControl.state.Triggers.Right == 1 && Time.time > nextFire && shotsDone >= weapons.MaxShots)
         {
             nextFire = Time.time + fireRate;
@@ -110,6 +118,7 @@ public class PlayerShooting : MonoBehaviour {
             emptyGun = true;
         }
 
+        //Allows the player to reload
         if (playerControl.state.Buttons.X == ButtonState.Pressed && shotsDone != 0)
         {
             playerAnim.ReloadingGun();
@@ -120,6 +129,7 @@ public class PlayerShooting : MonoBehaviour {
             reload = false;
         }
 
+        //Mehtod used to throw a grenade
         if (playerControl.state.Buttons.RightShoulder == ButtonState.Pressed && Time.time > nextThrow && grenadesThrown < weapons.MaxGrenades)
         {
             nextThrow = Time.time + throwRate;

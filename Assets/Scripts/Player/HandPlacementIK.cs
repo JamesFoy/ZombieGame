@@ -2,6 +2,10 @@
 using System;
 using System.Collections;
 
+//Author - James Foy
+//This script is used to control the animation for the players model hands.
+//this allows the players character to correctly hold the gun.
+
 [RequireComponent(typeof(Animator))]
 
 public class HandPlacementIK : MonoBehaviour

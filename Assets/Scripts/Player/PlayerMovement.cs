@@ -2,6 +2,9 @@
 using System.Collections;
 using XInputDotNetPure;
 
+//Author - James Foy
+//This script is used to move the player when the player inputs different commands
+
 public class PlayerMovement : MonoBehaviour
 {
     PlayerAnimations playerAnim;
@@ -29,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool moving;
 
+    //Setting up references to components
     private void Awake()
     {
         playerAnim = GetComponent<PlayerAnimations>();
@@ -39,21 +43,26 @@ public class PlayerMovement : MonoBehaviour
         moving = false;
     }
 
+    //This sets the variables to the control inputs
     private void FixedUpdate()
     {
         h = playerControl.state.ThumbSticks.Left.X;
         v = playerControl.state.ThumbSticks.Left.Y;
 
+        //Makes the player move and calls the rotates the player to the correct place
         if (Mathf.Abs(h) > 0.1f || Mathf.Abs(v) > 0.1f)
         {
             moving = true;
             Rotating(h, v);
 
+            //Moves the player
             if (aiming == false)
             {
                 rb.AddForce(transform.forward * speed);
             }
         }
+
+        //Stops the player moving
         else
         {
             moving = false;
@@ -62,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = stop;
         }
 
+        //Makes the player run
         if (playerControl.state.Buttons.LeftStick == ButtonState.Pressed && cam.isAiming == false)
         {
             speed = 20;
@@ -74,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    //Mehtod used to rotate the model to the correct direction
     public void Rotating(float horizontal, float vertical)
     {
 
@@ -102,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    //Method used to control movement while aiming
     public void WhileAiming()
     {
         aiming = true;

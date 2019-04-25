@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Author - James Foy
+//This script is used for all of the behaviour for the grenade after it is spawned. It will start a countdown for the time limit
+//of the grenade. It will also control the effects that occur to enemies around the grenade when it explodes.
+
 public class Grenade : MonoBehaviour {
 
     [SerializeField]
@@ -32,7 +36,8 @@ public class Grenade : MonoBehaviour {
         countDown = delay;
 	}
 
-    // Update is called once per frame
+    // Update is called once per frame. Starts the countdown for the grenade and if it reaches 0 and hasnt exploded
+    //it will call the explode funciton
     void Update()
     {
         countDown -= Time.deltaTime;
@@ -44,6 +49,8 @@ public class Grenade : MonoBehaviour {
         }
 	}
 
+    //This is the method that controls all behaviour for when the grenade explodes. It will spawn a explosion effect,
+    //it will also play an audio clip when it explodes and damage any enemy around the explosion
     private void Explode()
     {
         GameObject explosion = Instantiate(explosionEffect, transform.position, transform.rotation);

@@ -2,6 +2,10 @@
 using System;
 using System.Collections;
 
+//Author - James Foy
+//This script is used to allow the player to correct aim towards the centre of the screen.
+//This script ends up not being fully implemented into the game and therefore doesnt get used
+
 [RequireComponent(typeof(Animator))]
 
 public class AimingIKControl : MonoBehaviour
@@ -23,6 +27,7 @@ public class AimingIKControl : MonoBehaviour
 
     }
 
+    //This is what allows the animator to correctly position the model of the character to aim where the player looks
     private void OnAnimatorIK(int layerIndex)
     {
         if (false) return;

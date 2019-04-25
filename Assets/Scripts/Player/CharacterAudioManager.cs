@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Author - James Foy, Sharp Accent (https://www.youtube.com/watch?v=gQmU65ZHNxo&list=PL1bPKmY0c-wmfD6FzpuyFCmPPg3bwxMqe&index=4)
+//This script controls all of the player audio for the game.
+
 public class CharacterAudioManager : MonoBehaviour {
 
     public AudioSource gunSounds;
@@ -32,21 +35,25 @@ public class CharacterAudioManager : MonoBehaviour {
         runFoley.volume = 0;
 	}
 	
+    //Makes gun sound play
     public void PlayGunSound()
     {
         gunSounds.Play();
     }
 
+    //Makes reload sound play
     public void PlayReloadSound()
     {
         AkReload.Play();
     }
 
+    //Makes a step sound play
     public void Step()
     {
         PlayFootStep();
     }
 
+    //Makes the run sound effect play
     public void RunStep()
     {
         if (playerAnim.isRunning == true)
@@ -60,6 +67,8 @@ public class CharacterAudioManager : MonoBehaviour {
         PlayFootStep();
     }
 
+    //This method is used to control which step sound effect plays. This is done randomly through whichever audio clips are placed
+    //in the list
     public void PlayFootStep()
     {
         if (!footStep1.isPlaying) // if footstep 1 isnt playing then find a random clip from within the list, assign it and play it
@@ -81,6 +90,7 @@ public class CharacterAudioManager : MonoBehaviour {
         }
     }
 
+    //This allows the player to play specific sound effects
     public void PlayEffect(string name)
     {
         AudioClip clip = null;

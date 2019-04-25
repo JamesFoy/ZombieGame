@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+//Author - James Foy
+//This script is used to control all of the behaviour for the UI in the game. It controls all values that are displayed
+//on screen, including ammo count, text information, popups and amount of money.
+
 public class UIScript : MonoBehaviour
 {
     [SerializeField]
@@ -55,16 +59,19 @@ public class UIScript : MonoBehaviour
         waveInfo.enabled = false;
     }
 
+    //Makes the event manager listen to a new event
     void OnEnable()
     {
         EventManager.StartListening("WaveText", UpdateWaveInfo);
     }
 
+    //Stops the event manager from listening to the event
     void OnDisable()
     {
         EventManager.StartListening("WaveText", UpdateWaveInfo);
     }
 
+    //This is the event that is used to display the wave complete information
     public void UpdateWaveInfo()
     {
         WaveInfo();

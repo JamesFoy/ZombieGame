@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Author - James Foy
+//This script is used to control all of the player animations.
+
 public class PlayerAnimations : MonoBehaviour {
 
     CharacterAudioManager Audio;
@@ -39,7 +42,7 @@ public class PlayerAnimations : MonoBehaviour {
     private Transform magSpawn;
     public bool isRunning;
 
-    // Use this for initialization
+    // Use this for initialization. Setting up references to components
     public void Start ()
     {
         playerMove = GetComponent<PlayerMovement>();
@@ -92,6 +95,7 @@ public class PlayerAnimations : MonoBehaviour {
         mag.SetActive(false);
     }
 
+    //Bellow methods are used by animation events
     public void MagOn()
     {
         mag.SetActive(true);

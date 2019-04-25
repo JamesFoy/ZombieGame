@@ -11,6 +11,7 @@ public class Church : MonoBehaviour {
     [SerializeField]
     public int churchHealth;
 
+    //Check if the enemy is near the church and if so loose life and destroy the enemy
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))

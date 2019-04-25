@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using XInputDotNetPure;
 
+//Author - James Foy
+//This script is used to allow the player to use a controller for input using XInput.
+
 public class PlayerControl : MonoBehaviour {
 
     PlayerIndex one; // sets how many players are in the game using controllers. This sets 1 player as player one.

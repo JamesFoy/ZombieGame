@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+//Author - James Foy
+//This script is used to give the player specific stats like health and ammount of money
+
 [Serializable]
 public class PlayerStats
 {
