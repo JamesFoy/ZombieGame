@@ -63,9 +63,9 @@
   <ItemGroup>
     <Compile Include="Assets\Explosion.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
-    <Compile Include="Assets\Scripts\Camera\CutsceneBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Camera\CutSceneEnding.cs" />
-    <Compile Include="Assets\Scripts\Camera\CutSceneStarting.cs" />
+    <Compile Include="Assets\Scripts\CutScene\CutsceneBehaviour.cs" />
+    <Compile Include="Assets\Scripts\CutScene\CutSceneEnding.cs" />
+    <Compile Include="Assets\Scripts\CutScene\CutSceneStarting.cs" />
     <Compile Include="Assets\Scripts\Enemy\AIScript.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStats.cs" />

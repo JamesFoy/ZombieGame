@@ -5,14 +5,18 @@ using UnityEngine;
 //Author - James Foy
 //This script was used as a test to make sure that the evenet system was working
 
-public class EventTriggers : MonoBehaviour {
-	
-	// Update is called once per frame
-	void Update ()
+namespace Events
+{
+    public class EventTriggers : MonoBehaviour
     {
-        if (Input.GetKeyDown("g"))
+
+        // Update is called once per frame
+        void Update()
         {
-            EventManager.TriggerEvent("WaveText");
-        }	
-	}
+            if (Input.GetKeyDown("g"))
+            {
+                EventManager.TriggerEvent("WaveText");
+            }
+        }
+    }
 }

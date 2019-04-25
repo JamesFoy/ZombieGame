@@ -1,120 +1,126 @@
-﻿using System.Collections;
+﻿using CameraControl;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 //Author - James Foy
 //This script is used to control all of the player animations.
 
-public class PlayerAnimations : MonoBehaviour {
-
-    CharacterAudioManager Audio;
-
-    PlayerShooting playerShot;
-
-    PlayerMovement playerMove;
-
-    HandPlacementIK handIk;
-
-    [SerializeField]
-    private CameraFollow cam;
-
-    [SerializeField]
-    private Animator anim;
-
-    private bool Pistol = false;
-    private bool TwoHanded = false;
-
-    [SerializeField]
-    private GameObject mag;
-    [SerializeField]
-    private GameObject mag2;
-
-    [SerializeField]
-    GameObject granade;
-
-    [SerializeField]
-    float throwForce;
-
-    [SerializeField]
-    Transform handPoint;
-
-    [SerializeField]
-    private Transform magSpawn;
-    public bool isRunning;
-
-    // Use this for initialization. Setting up references to components
-    public void Start ()
+namespace Player
+{
+    public class PlayerAnimations : MonoBehaviour
     {
-        playerMove = GetComponent<PlayerMovement>();
-        playerShot = GetComponent<PlayerShooting>();
-        Audio = GetComponent<CharacterAudioManager>();
-        handIk = GetComponent<HandPlacementIK>();
 
-        if (anim != null)
+        CharacterAudioManager Audio;
+
+        PlayerShooting playerShot;
+
+        PlayerMovement playerMove;
+
+        HandPlacementIK handIk;
+
+        [SerializeField]
+        private CameraFollow cam;
+
+        [SerializeField]
+        private Animator anim;
+
+        private bool Pistol = false;
+        private bool TwoHanded = false;
+
+        [SerializeField]
+        private GameObject mag;
+        [SerializeField]
+        private GameObject mag2;
+
+        [SerializeField]
+        GameObject granade;
+
+        [SerializeField]
+        float throwForce;
+
+        [SerializeField]
+        Transform handPoint;
+
+        [SerializeField]
+        private Transform magSpawn;
+        public bool isRunning;
+
+        // Use this for initialization. Setting up references to components
+        public void Start()
         {
-            anim = GetComponent<Animator>();
-        } return;
-    }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        //Setting all animations to the parameters
-        anim.SetFloat("Horizontal", playerMove.h);
-        anim.SetFloat("Vertical", playerMove.v);
-        anim.SetBool("isShooting", playerShot.isShooting);
-        anim.SetBool("isAiming", cam.isAiming);
-        anim.SetBool("Reload", playerShot.reload);
-        anim.SetBool("Pistol", Pistol);
-        anim.SetBool("TwoHanded", TwoHanded);
-        anim.SetBool("Running", isRunning);
-        anim.SetBool("IsMoving", playerMove.moving);
-        anim.SetBool("ThrowGranade", playerShot.throwGranade);
-    }
+            playerMove = GetComponent<PlayerMovement>();
+            playerShot = GetComponent<PlayerShooting>();
+            Audio = GetComponent<CharacterAudioManager>();
+            handIk = GetComponent<HandPlacementIK>();
 
-    //Method use for reloading
-    public void ReloadingGun()
-    {
-        if (playerShot.reload == true)
-        {
-            Audio.PlayReloadSound();
-            anim.SetTrigger("Reloading");
-            playerShot.emptyGun = false;
-            playerShot.shotsDone = 0;
+            if (anim != null)
+            {
+                anim = GetComponent<Animator>();
+            }
+            return;
         }
-        else
+
+        // Update is called once per frame
+        void Update()
         {
-            anim.ResetTrigger("Reloading");
+            //Setting all animations to the parameters
+            anim.SetFloat("Horizontal", playerMove.h);
+            anim.SetFloat("Vertical", playerMove.v);
+            anim.SetBool("isShooting", playerShot.isShooting);
+            anim.SetBool("isAiming", cam.isAiming);
+            anim.SetBool("Reload", playerShot.reload);
+            anim.SetBool("Pistol", Pistol);
+            anim.SetBool("TwoHanded", TwoHanded);
+            anim.SetBool("Running", isRunning);
+            anim.SetBool("IsMoving", playerMove.moving);
+            anim.SetBool("ThrowGranade", playerShot.throwGranade);
         }
-    }
 
-    //These methods are used for animation events
-    public void MagOff()
-    {
-        Instantiate(mag2, magSpawn);
-        mag.SetActive(false);
-    }
+        //Method use for reloading
+        public void ReloadingGun()
+        {
+            if (playerShot.reload == true)
+            {
+                Audio.PlayReloadSound();
+                anim.SetTrigger("Reloading");
+                playerShot.emptyGun = false;
+                playerShot.shotsDone = 0;
+            }
+            else
+            {
+                anim.ResetTrigger("Reloading");
+            }
+        }
 
-    //Bellow methods are used by animation events
-    public void MagOn()
-    {
-        mag.SetActive(true);
-    }
+        //These methods are used for animation events
+        public void MagOff()
+        {
+            Instantiate(mag2, magSpawn);
+            mag.SetActive(false);
+        }
 
-    public void IkOff()
-    {
-        handIk.ikActive = false;
-    }
+        //Bellow methods are used by animation events
+        public void MagOn()
+        {
+            mag.SetActive(true);
+        }
 
-    public void IkOn()
-    {
-        handIk.ikActive = true;
-    }
+        public void IkOff()
+        {
+            handIk.ikActive = false;
+        }
 
-    private void ThrowGrenade()
-    {
-        GameObject grenade = Instantiate(granade, handPoint.position, handPoint.rotation);
-        Rigidbody rb = grenade.GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward * throwForce, ForceMode.VelocityChange);
+        public void IkOn()
+        {
+            handIk.ikActive = true;
+        }
+
+        private void ThrowGrenade()
+        {
+            GameObject grenade = Instantiate(granade, handPoint.position, handPoint.rotation);
+            Rigidbody rb = grenade.GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * throwForce, ForceMode.VelocityChange);
+        }
     }
 }

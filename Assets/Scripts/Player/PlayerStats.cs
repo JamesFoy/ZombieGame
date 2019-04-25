@@ -6,33 +6,37 @@ using System;
 //Author - James Foy
 //This script is used to give the player specific stats like health and ammount of money
 
-[Serializable]
-public class PlayerStats
+namespace Player
 {
-    [SerializeField]
-    protected int playerHealth = 3;
-
-    [SerializeField]
-    private int money;
-
-    private int Money 
+    [Serializable]
+    public class PlayerStats
     {
-        get
-        {
-            return money;
-        }
-    }
+        [SerializeField]
+        protected int playerHealth = 3;
 
-    public int Health
-    {
-        get
+        [SerializeField]
+        private int money;
+
+        private int Money
         {
-            return playerHealth;
+            get
+            {
+                return money;
+            }
         }
 
-        set
+        public int Health
         {
-            this.playerHealth = value;
+            get
+            {
+                return playerHealth;
+            }
+
+            set
+            {
+                this.playerHealth = value;
+            }
         }
     }
 }
+

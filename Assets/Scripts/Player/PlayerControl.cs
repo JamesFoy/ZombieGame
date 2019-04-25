@@ -6,41 +6,45 @@ using XInputDotNetPure;
 //Author - James Foy
 //This script is used to allow the player to use a controller for input using XInput.
 
-public class PlayerControl : MonoBehaviour {
-
-    PlayerIndex one; // sets how many players are in the game using controllers. This sets 1 player as player one.
-
-    public GamePadState state;
-
-    PlayerAnimations playerAnim;
-
-    PlayerShooting playerShot;
-
-    CharacterAudioManager Audio;
-
-    // Use this for initialization
-    void Start ()
+namespace Player
+{
+    public class PlayerControl : MonoBehaviour
     {
-        playerAnim = GetComponent<PlayerAnimations>();
-        Audio = GetComponent<CharacterAudioManager>();
-        playerShot = GetComponent<PlayerShooting>();
-    }
-	
-	// Update is called once per frame
-	void FixedUpdate ()
-    {
-        PlayerIndex player = PlayerIndex.One;
 
-        state = GamePad.GetState(player);
+        PlayerIndex one; // sets how many players are in the game using controllers. This sets 1 player as player one.
 
-        if (playerShot.isShooting == true)
+        public GamePadState state;
+
+        PlayerAnimations playerAnim;
+
+        PlayerShooting playerShot;
+
+        CharacterAudioManager Audio;
+
+        // Use this for initialization
+        void Start()
         {
-            GamePad.SetVibration(player, 1, state.Triggers.Right);
-            Audio.PlayGunSound();
+            playerAnim = GetComponent<PlayerAnimations>();
+            Audio = GetComponent<CharacterAudioManager>();
+            playerShot = GetComponent<PlayerShooting>();
         }
-        else
+
+        // Update is called once per frame
+        void FixedUpdate()
         {
-            GamePad.SetVibration(player, 0, 0);
+            PlayerIndex player = PlayerIndex.One;
+
+            state = GamePad.GetState(player);
+
+            if (playerShot.isShooting == true)
+            {
+                GamePad.SetVibration(player, 1, state.Triggers.Right);
+                Audio.PlayGunSound();
+            }
+            else
+            {
+                GamePad.SetVibration(player, 0, 0);
+            }
         }
     }
 }

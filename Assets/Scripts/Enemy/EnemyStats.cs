@@ -6,22 +6,25 @@ using System;
 //Author - James Foy
 //This script is used to give the enemies specific stats like health
 
-[Serializable]
-public class EnemyStats
+namespace Enemy
 {
-    [SerializeField]
-    private int enemyHealth;
-
-    public int Health
+    [Serializable]
+    public class EnemyStats
     {
-        get
-        {
-            return enemyHealth;
-        }
+        [SerializeField]
+        private int enemyHealth;
 
-        set
+        public int Health
         {
-            this.enemyHealth = value;
+            get
+            {
+                return enemyHealth;
+            }
+
+            set
+            {
+                this.enemyHealth = value;
+            }
         }
     }
 }

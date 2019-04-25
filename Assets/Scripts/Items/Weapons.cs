@@ -7,39 +7,43 @@ using System;
 //This script is used for all of the weapons stats that are used within the game. This will be inclulde how much ammo and grenades
 //the player has and how much damage weapons do.
 
-[Serializable]
-public class Weapons
+namespace Items
 {
-    [SerializeField]
-    private int maxGrenades = 3;
-
-    [SerializeField]
-    private int akDamage;
-
-    [SerializeField]
-    private int maxShots = 30; 
-
-    public int AkDamge
+    [Serializable]
+    public class Weapons
     {
-        get
+        [SerializeField]
+        private int maxGrenades = 3;
+
+        [SerializeField]
+        private int akDamage;
+
+        [SerializeField]
+        private int maxShots = 30;
+
+        public int AkDamge
         {
-            return akDamage;
+            get
+            {
+                return akDamage;
+            }
         }
-    }
 
-    public int MaxShots
-    {
-        get
+        public int MaxShots
         {
-            return maxShots;
+            get
+            {
+                return maxShots;
+            }
         }
-    }
 
-    public int MaxGrenades
-    {
-        get
+        public int MaxGrenades
         {
-            return maxGrenades;
+            get
+            {
+                return maxGrenades;
+            }
         }
     }
 }
+
