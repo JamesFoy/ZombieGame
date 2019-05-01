@@ -1,0 +1,3 @@
+﻿interface IStats {
+    void Stats();
+}
